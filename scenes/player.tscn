@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://dr6by2igxv5o5"]
+[gd_scene load_steps=14 format=3 uid="uid://dr6by2igxv5o5"]
 
 [ext_resource type="Texture2D" uid="uid://frrwiupbnkqu" path="res://scenes/myPlayersheet.png" id="1_33mki"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_pirb3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eygip"]
 radius = 7.0
@@ -57,7 +58,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_q6awo")
 }],
 "loop": true,
-"name": &"move down",
+"name": &"move_down",
 "speed": 5.0
 }, {
 "frames": [{
@@ -74,7 +75,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ble4u")
 }],
 "loop": true,
-"name": &"move left",
+"name": &"move_left",
 "speed": 5.0
 }, {
 "frames": [{
@@ -91,7 +92,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ble4u")
 }],
 "loop": true,
-"name": &"move right",
+"name": &"move_right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -108,215 +109,23 @@ animations = [{
 "texture": SubResource("AtlasTexture_k5mci")
 }],
 "loop": true,
-"name": &"move up",
+"name": &"move_up",
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_2myj0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"move right"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(563, 321)
+script = ExtResource("1_pirb3")
 
-[sub_resource type="Animation" id="Animation_8006q"]
-length = 0.4
-
-[sub_resource type="Animation" id="Animation_f6wst"]
-resource_name = "left"
-length = 0.41
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"move left"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.0333333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_gxi4h"]
-resource_name = "right"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"move right"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.366667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [true, true]
-}
-
-[sub_resource type="Animation" id="Animation_hll7i"]
-resource_name = "up"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"move up"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_3ybab"]
-resource_name = "down"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"move down"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_kpqde"]
-_data = {
-"RESET": SubResource("Animation_2myj0"),
-"default": SubResource("Animation_8006q"),
-"down": SubResource("Animation_3ybab"),
-"left": SubResource("Animation_f6wst"),
-"right": SubResource("Animation_gxi4h"),
-"up": SubResource("Animation_hll7i")
-}
-
-[node name="Node2D" type="Node2D"]
-
-[node name="player" type="CharacterBody2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_eygip")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -6)
+position = Vector2(1, -4)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_rdrau")
-animation = &"move right"
+animation = &"move_right"
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
@@ -330,9 +139,4 @@ metadata/_aseprite_wizard_source_file_hash_ = "a7f467db1d8f284bf27f4bd2b2d8b471"
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": false,
 "output_section": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
-libraries = {
-"": SubResource("AnimationLibrary_kpqde")
 }
