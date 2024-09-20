@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dr6by2igxv5o5"]
+[gd_scene load_steps=23 format=3 uid="uid://dr6by2igxv5o5"]
 
 [ext_resource type="Texture2D" uid="uid://frrwiupbnkqu" path="res://scenes/myPlayersheet.png" id="1_33mki"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_pirb3"]
+[ext_resource type="Texture2D" uid="uid://cet4mkbsyte43" path="res://art/npcs/oldladyMedicineSheet.png" id="3_xxg5l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eygip"]
 radius = 7.0
@@ -113,14 +114,80 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hlklr"]
+radius = 37.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg3rv"]
+atlas = ExtResource("3_xxg5l")
+region = Rect2(159, 80, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts5hx"]
+atlas = ExtResource("3_xxg5l")
+region = Rect2(160, 96, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i00cf"]
+atlas = ExtResource("3_xxg5l")
+region = Rect2(160, 64, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujjct"]
+atlas = ExtResource("3_xxg5l")
+region = Rect2(192, 65, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awkuk"]
+atlas = ExtResource("3_xxg5l")
+region = Rect2(175, 65, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggmoi"]
+atlas = ExtResource("3_xxg5l")
+region = Rect2(175, 48, 17, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qwtli"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg3rv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts5hx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i00cf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg3rv")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujjct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awkuk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujjct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggmoi")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}]
+
+[node name="Enviornment2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(563, 321)
 script = ExtResource("1_pirb3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CircleShape2D_eygip")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
 position = Vector2(1, -4)
 scale = Vector2(4, 4)
@@ -140,3 +207,17 @@ metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": false,
 "output_section": false
 }
+
+[node name="NpcBody2D1" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NpcBody2D1"]
+position = Vector2(440, 333)
+shape = SubResource("CircleShape2D_hlklr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NpcBody2D1"]
+position = Vector2(442, 330)
+scale = Vector2(3.82353, 4)
+sprite_frames = SubResource("SpriteFrames_qwtli")
+animation = &"walk_right"
+frame = 2
+frame_progress = 0.870022
