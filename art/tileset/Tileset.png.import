@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c71owwesbynwe"
-path="res://.godot/imported/blacksmithsheet.png-351224ac5e472c78895c457226fdf9c3.ctex"
+uid="uid://dws7fkwv6k8l"
+path="res://.godot/imported/Tileset.png-b82913552fd59c9c2fd078327814b45d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/npcs/blacksmithsheet.png"
-dest_files=["res://.godot/imported/blacksmithsheet.png-351224ac5e472c78895c457226fdf9c3.ctex"]
+source_file="res://art/tileset/Tileset.png"
+dest_files=["res://.godot/imported/Tileset.png-b82913552fd59c9c2fd078327814b45d.ctex"]
 
 [params]
 
