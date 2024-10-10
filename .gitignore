@@ -1,6 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-*.json
 .DS_Store
 __pycache__
