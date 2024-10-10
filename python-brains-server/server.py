@@ -15,10 +15,10 @@ def npc_conversation():
     user_input = data.get('user_input')  # The player's input
 
     # Generate NPC response using the AiotGpt logic
-    response = aiot_gpt.run_character(npc_name, user_input)
+    response = aiot_gpt.run_character_api(npc_name, user_input)
 
     # Return the response in JSON format
-    return jsonify({'npc_response': response})
+    return jsonify({npc_name: response})
 
 # Run the Flask app on port 4200
 if __name__ == '__main__':
