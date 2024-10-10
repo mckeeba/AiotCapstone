@@ -8,7 +8,7 @@ var d_active = false
 func _ready():
 	$NinePatchRect.visible = false
 	set_process_input(true)
-	
+
 
 func start():
 	if d_active:

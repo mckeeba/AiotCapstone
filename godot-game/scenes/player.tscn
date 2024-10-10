@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://frrwiupbnkqu" path="res://scenes/myPlayersheet.png" id="1_33mki"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_pirb3"]
 [ext_resource type="Texture2D" uid="uid://cet4mkbsyte43" path="res://art/npcs/oldladyMedicineSheet.png" id="3_xxg5l"]
-[ext_resource type="Script" path="res://scenes/npc_body_2d_1.gd" id="4_rc2ll"]
-[ext_resource type="Script" path="res://scenes/npc_dialogue.gd" id="5_1qvbg"]
-[ext_resource type="Script" path="res://dialogues/dialoguePlayer.gd" id="7_m83k6"]
+[ext_resource type="Script" path="res://scenes/medicineWoman.gd" id="4_fd001"]
+[ext_resource type="Script" path="res://scenes/areaSet.gd" id="6_e7k50"]
+[ext_resource type="Script" path="res://dialogues/dialogueSet.gd" id="7_hl7ko"]
 [ext_resource type="Texture2D" uid="uid://c4rdlj0fekdv5" path="res://art/border_05.png" id="8_ag2tp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hb50x"]
@@ -5560,7 +5560,7 @@ position = Vector2(0, 1)
 
 [node name="MedicineWoman" type="CharacterBody2D" parent="."]
 position = Vector2(622, 1252)
-script = ExtResource("4_rc2ll")
+script = ExtResource("4_fd001")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MedicineWoman"]
 position = Vector2(307, 390)
@@ -5575,14 +5575,14 @@ frame = 2
 frame_progress = 0.870022
 
 [node name="Area2D" type="Area2D" parent="MedicineWoman"]
-script = ExtResource("5_1qvbg")
+script = ExtResource("6_e7k50")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MedicineWoman/Area2D"]
 position = Vector2(318, 382)
 shape = SubResource("RectangleShape2D_qu260")
 
 [node name="Dialogue" type="CanvasLayer" parent="MedicineWoman"]
-script = ExtResource("7_m83k6")
+script = ExtResource("7_hl7ko")
 dialogfile = "res://dialogues/jsongodot/medicineWomanDialog.json"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MedicineWoman/Dialogue"]
