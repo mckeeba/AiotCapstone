@@ -154,3 +154,55 @@ class AiotGpt:
             "role": "system",
             "content": "The player has left your post. They will be back later."
         })
+
+    def run_character_api(self, character, user_input):
+        # Select the appropriate chat log and character file based on the character name
+        if character == 'wizard':
+            chat_log = self.wizard_logs
+            character_name = 'Alabaster, the wizard'
+            file_path = 'wizard.json'
+        elif character == 'medicine woman':
+            chat_log = self.medicine_woman_logs
+            character_name = 'Evanora, the medicine woman'
+            file_path = 'medicine_woman.json'
+        elif character == 'blacksmith':
+            chat_log = self.blacksmith_logs
+            character_name = 'Haus, the blacksmith'
+            file_path = 'blacksmith.json'
+        elif character == 'daughter':
+            chat_log = self.daughter_logs
+            character_name = 'Sarah, daughter of the blacksmith'
+            file_path = 'daughter.json'
+        elif character == 'goblin':
+            chat_log = self.goblin_logs
+            character_name = 'Glork, the Goblin'
+            file_path = 'goblin.json'
+        else:
+            raise ValueError(
+                f"Invalid character: {character}. Expected one of: 'wizard', 'medicine woman', 'blacksmith', 'daughter', 'goblin'.")
+
+        # Append the user's query to the chat log
+        chat_log.append({
+            "role": "user",
+            "content": user_input
+        })
+
+        # Get the response from the GPT model
+        character_response = self.client.chat.completions.create(
+            messages=chat_log,
+            model="gpt-4o",
+        )
+
+        response = character_response.choices[0].message.content
+        # Append the assistant's response to the chat log
+        chat_log.append({
+            "role": "assistant",
+            "content": response
+        })
+
+        # Save the conversation to the appropriate character's file
+        self.append_to_json(file_path, {"name": character_name, "text": response})
+
+        # Return the response to the server
+        return response
+
