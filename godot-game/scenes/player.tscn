@@ -5583,7 +5583,6 @@ shape = SubResource("RectangleShape2D_qu260")
 
 [node name="Dialogue" type="CanvasLayer" parent="MedicineWoman"]
 script = ExtResource("7_hl7ko")
-dialogfile = "res://dialogues/jsongodot/medicineWomanDialog.json"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MedicineWoman/Dialogue"]
 offset_left = 275.0

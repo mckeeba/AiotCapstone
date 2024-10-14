@@ -5,6 +5,7 @@ extends CanvasLayer
 var dialogue = []
 var current_dialogue_id = 0
 var d_active = false
+var awaiting_response = false  # To track if we're waiting for a server response
 var http_request: HTTPRequest
 
 func _ready():
@@ -12,31 +13,34 @@ func _ready():
 	http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)
-	
+
 	$NinePatchRect.visible = false
 	set_process_input(true)
-
 
 func start():
 	if d_active:
 		return  # Prevent starting dialogue again if already active
 	$NinePatchRect.visible = true
 	d_active = true
-	
-	current_dialogue_id = -1  # Start with the first dialogue entry
+
+	current_dialogue_id = 0  # Start with the first dialogue entry
 	next_script()
 
 func next_script():
+	if awaiting_response:
+		# If we're still waiting for the response, don't proceed to the next dialogue
+		return
+	
 	# Move to the next dialogue entry
-	current_dialogue_id += 1
-
 	if current_dialogue_id == 0:
 		# On the first interaction, trigger the HTTP request to the server
-		send_request_to_server("hello, i'm new in town")
+		send_request_to_server("hello, I'm new in town")
 	else:
 		# Continue to the next dialogue line
 		if current_dialogue_id < dialogue.size():
+			print(dialogue)
 			show_dialogue(current_dialogue_id)
+			current_dialogue_id += 1
 		else:
 			$NinePatchRect.visible = false
 			d_active = false
@@ -49,10 +53,12 @@ func show_dialogue(index: int):
 # Function to send HTTP request to the server
 func send_request_to_server(user_input: String):
 	var json_data = {
-		"npc_name": "wizard",
+		"npc_name": 'medicine woman',
 		"user_input": user_input
 	}
 	var json_string = JSON.stringify(json_data)
+
+	awaiting_response = true  # Mark that we are waiting for a response
 
 	# Make an HTTP request to the server (non-blocking)
 	http_request.request(
@@ -60,11 +66,12 @@ func send_request_to_server(user_input: String):
 		["Content-Type: application/json"],  # Request headers
 		HTTPClient.METHOD_POST,  # HTTP method
 		json_string  # Data to send in the body
-		)
-
+	)
 
 # Callback function for when the request is completed
 func _http_request_completed(result, response_code, headers, body):
+	awaiting_response = false  # Reset the waiting flag
+
 	if response_code == 200:
 		# Successfully got a response from the server
 		var json = JSON.new()
@@ -75,7 +82,10 @@ func _http_request_completed(result, response_code, headers, body):
 			# Store the dialogue response in the dialogue array
 			for npc in response_data.keys():
 				dialogue.append({"name": npc, "text": response_data[npc]})
-			next_script()  # Show the received dialogue
+			
+			# Now that the response is ready, show the next dialogue
+			show_dialogue(current_dialogue_id)
+			current_dialogue_id += 1
 		else:
 			print("Error parsing server response")
 	else:

@@ -5,7 +5,6 @@
 
 [node name="Dialogue" type="CanvasLayer"]
 script = ExtResource("1_fjg64")
-dialogfile = "res://dialogues/jsongodot/medicineWomanDialog.json"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 offset_left = 275.0
