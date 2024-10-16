@@ -35,4 +35,8 @@ text = "Chatting...."
 wait_time = 0.4
 one_shot = true
 
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_right = 67.0625
+offset_bottom = 31.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

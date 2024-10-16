@@ -13,19 +13,21 @@ func _ready():
 	http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)
-
 	$NinePatchRect.visible = false
+	$LineEdit.visible = false  # Hide input box until needed
 	set_process_input(true)
+
 
 func start():
 	if d_active:
 		return  # Prevent starting dialogue again if already active
 	$NinePatchRect.visible = true
+	$LineEdit.visible = true  # Show the input box for the player
+	$LineEdit.grab_focus()  # Give focus to the input box for typing
 	d_active = true
-
 	current_dialogue_id = 0  # Start with the first dialogue entry
 	next_script()
-
+	
 func next_script():
 	if awaiting_response:
 		# If we're still waiting for the response, don't proceed to the next dialogue
@@ -38,12 +40,12 @@ func next_script():
 	else:
 		# Continue to the next dialogue line
 		if current_dialogue_id < dialogue.size():
-			print(dialogue)
 			show_dialogue(current_dialogue_id)
 			current_dialogue_id += 1
 		else:
-			$NinePatchRect.visible = false
-			d_active = false
+			# Allow the player to respond by typing into the input box
+			$LineEdit.visible = true
+			$LineEdit.grab_focus()
 
 func show_dialogue(index: int):
 	if index < dialogue.size():
@@ -91,7 +93,22 @@ func _http_request_completed(result, response_code, headers, body):
 	else:
 		print("HTTP request failed with response code: ", response_code)
 
+# Function to end the dialogue session
+func end_dialogue():
+	$NinePatchRect.visible = false  # Hide the UI
+	$LineEdit.visible = false  # Hide the input box
+	d_active = false
+	print("Dialogue finished")
+
 func _input(event):
 	# Check for mouse clicks or pressing Enter/Space to advance dialogue
 	if d_active and (event is InputEventMouseButton and event.is_pressed() or event.is_action_pressed("ui_accept")):
-		next_script()
+		# If input box is visible, check for player input
+		if $LineEdit.visible and $LineEdit.text != "" and event.keycode == KEY_ENTER:
+			# Send player's input to the server
+			send_request_to_server($LineEdit.text)
+			$LineEdit.text = ""  # Clear the input field after sending
+			$LineEdit.visible = false  # Hide input box after sending
+		else:
+			# Proceed to the next dialogue if no input is expected
+			next_script()
