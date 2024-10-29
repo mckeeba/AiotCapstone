@@ -35,6 +35,6 @@ func _process(delta):
 	# Check for interaction when the player presses the interact key
 	if can_interact and Input.is_action_just_pressed("ui_accept"):
 		# Find the NPC by its path and trigger dialogue
-		var npc = get_node_or_null("/root/Environment2D/MedicineWoman")
+		var npc = get_node_or_null("/root/Environment2D/MedicineWoman") or get_node_or_null("/root/Environment2D/Blacksmith")
 		if npc:
 			npc.trigger_dialogue()

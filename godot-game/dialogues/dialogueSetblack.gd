@@ -13,17 +13,17 @@ func _ready():
 	http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)
-	$NinePatchRect.visible = false
-	$LineEdit.visible = false  # Hide input box until needed
+	$NinePatchRect2.visible = false
+	$LineEdit2.visible = false  # Hide input box until needed
 	set_process_input(true)
 
 
 func start():
 	if d_active:
 		return  # Prevent starting dialogue again if already active
-	$NinePatchRect.visible = true
-	$LineEdit.visible = true  # Show the input box for the player
-	$LineEdit.grab_focus()  # Give focus to the input box for typing
+	$NinePatchRect2.visible = true
+	$LineEdit2.visible = true  # Show the input box for the player
+	$LineEdit2.grab_focus()  # Give focus to the input box for typing
 	d_active = true
 	current_dialogue_id = 0  # Start with the first dialogue entry
 	next_script()
@@ -44,18 +44,18 @@ func next_script():
 			current_dialogue_id += 1
 		else:
 			# Allow the player to respond by typing into the input box
-			$LineEdit.visible = true
-			$LineEdit.grab_focus()
+			$LineEdit2.visible = true
+			$LineEdit2.grab_focus()
 
 func show_dialogue(index: int):
 	if index < dialogue.size():
-		$NinePatchRect/Name.text = dialogue[index]['name']
-		$NinePatchRect/Chat.text = dialogue[index]['text']
+		$NinePatchRect2/Name2.text = dialogue[index]['name']
+		$NinePatchRect2/Chat2.text = dialogue[index]['text']
 
 # Function to send HTTP request to the server
 func send_request_to_server(user_input: String):
 	var json_data = {
-		"npc_name": 'medicine woman',
+		"npc_name": 'blacksmith',
 		"user_input": user_input
 	}
 	var json_string = JSON.stringify(json_data)
@@ -95,8 +95,8 @@ func _http_request_completed(result, response_code, headers, body):
 
 # Function to end the dialogue session
 func end_dialogue():
-	$NinePatchRect.visible = false  # Hide the UI
-	$LineEdit.visible = false  # Hide the input box
+	$NinePatchRect2.visible = false  # Hide the UI
+	$LineEdit2.visible = false  # Hide the input box
 	d_active = false
 	print("Dialogue finished")
 
@@ -104,11 +104,11 @@ func _input(event):
 	# Check for mouse clicks or pressing Enter/Space to advance dialogue
 	if d_active and (event is InputEventMouseButton and event.is_pressed() or event.is_action_pressed("ui_accept")):
 		# If input box is visible, check for player input
-		if $LineEdit.visible and $LineEdit.text != "" and event.keycode == KEY_ENTER:
+		if $LineEdit2.visible and $LineEdit2.text != "" and event.keycode == KEY_ENTER:
 			# Send player's input to the server
-			send_request_to_server($LineEdit.text)
-			$LineEdit.text = ""  # Clear the input field after sending
-			$LineEdit.visible = false  # Hide input box after sending
+			send_request_to_server($LineEdit2.text)
+			$LineEdit2.text = ""  # Clear the input field after sending
+			$LineEdit2.visible = false  # Hide input box after sending
 		else:
 			# Proceed to the next dialogue if no input is expected
 			next_script()

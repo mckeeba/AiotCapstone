@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://dr6by2igxv5o5"]
+[gd_scene load_steps=38 format=4 uid="uid://dr6by2igxv5o5"]
 
 [ext_resource type="Texture2D" uid="uid://dws7fkwv6k8l" path="res://art/tileset/Tileset.png" id="1_4p0rb"]
 [ext_resource type="Texture2D" uid="uid://frrwiupbnkqu" path="res://scenes/myPlayersheet.png" id="1_33mki"]
@@ -6,8 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://cet4mkbsyte43" path="res://art/npcs/oldladyMedicineSheet.png" id="3_xxg5l"]
 [ext_resource type="Script" path="res://scenes/medicineWoman.gd" id="4_fd001"]
 [ext_resource type="Script" path="res://scenes/areaSet.gd" id="6_e7k50"]
-[ext_resource type="Script" path="res://dialogues/dialogueSet.gd" id="7_hl7ko"]
+[ext_resource type="Script" path="res://dialogues/dialogueSetmed.gd" id="7_hl7ko"]
 [ext_resource type="Texture2D" uid="uid://c4rdlj0fekdv5" path="res://art/border_05.png" id="8_ag2tp"]
+[ext_resource type="Texture2D" uid="uid://c71owwesbynwe" path="res://art/npcs/blacksmithsheet.png" id="9_3qgsy"]
+[ext_resource type="Script" path="res://scenes/blacksmith.gd" id="9_f30gd"]
+[ext_resource type="Script" path="res://dialogues/dialogueSetblack.gd" id="11_ji3dm"]
+[ext_resource type="Script" path="res://scenes/areaSetblack.gd" id="11_w7js4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hb50x"]
 texture = ExtResource("1_4p0rb")
@@ -5500,6 +5504,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qu260"]
 size = Vector2(222, 150.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_17h7u"]
+radius = 50.4777
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4s0sc"]
+atlas = ExtResource("9_3qgsy")
+region = Rect2(48, 108, 16, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6gjdb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4s0sc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Enviornment2D" type="Node2D"]
 position = Vector2(-579, -1115)
 
@@ -5640,4 +5662,68 @@ polygon = PackedVector2Array(4372, 1684, 4366, 1782, 4378, 1800, 4391, 1846, 438
 [node name="house3" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(3063, 1907, 3063, 2009, 3070, 2031, 3068, 2089, 3132, 2093, 3182, 2104, 3242, 2100, 3271, 2090, 3300, 2098, 3319, 2090, 3318, 2021, 3336, 2005, 3333, 1902, 3300, 1892, 3200, 1857)
 
+[node name="Blacksmith" type="CharacterBody2D" parent="."]
+position = Vector2(2856, 2075)
+script = ExtResource("9_f30gd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blacksmith"]
+position = Vector2(-47, -21)
+shape = SubResource("CircleShape2D_17h7u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Blacksmith"]
+position = Vector2(-45.9998, -33.5)
+scale = Vector2(4.125, 4.04762)
+sprite_frames = SubResource("SpriteFrames_6gjdb")
+frame_progress = 0.518647
+
+[node name="Area2D" type="Area2D" parent="Blacksmith"]
+position = Vector2(-50, -30)
+script = ExtResource("11_w7js4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blacksmith/Area2D"]
+position = Vector2(4, 9)
+shape = SubResource("RectangleShape2D_qu260")
+
+[node name="DialogueBlk" type="CanvasLayer" parent="Blacksmith"]
+script = ExtResource("11_ji3dm")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Blacksmith/DialogueBlk"]
+offset_left = 1950.0
+offset_top = 634.0
+offset_right = 2481.0
+offset_bottom = 811.0
+texture = ExtResource("8_ag2tp")
+region_rect = Rect2(3.5, 0.75, 37, 41.5)
+patch_margin_top = 2
+
+[node name="Name2" type="RichTextLabel" parent="Blacksmith/DialogueBlk/NinePatchRect2"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 17.0
+offset_right = 175.0
+offset_bottom = 57.0
+text = "Name"
+
+[node name="Chat2" type="RichTextLabel" parent="Blacksmith/DialogueBlk/NinePatchRect2"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 46.0
+offset_right = 488.0
+offset_bottom = 138.0
+text = "Chatting...."
+
+[node name="Timer2" type="Timer" parent="Blacksmith/DialogueBlk"]
+wait_time = 0.4
+one_shot = true
+
+[node name="LineEdit2" type="LineEdit" parent="Blacksmith/DialogueBlk"]
+offset_left = 1813.0
+offset_top = 589.0
+offset_right = 1955.0
+offset_bottom = 632.0
+placeholder_text = "Enter text here"
+alignment = 1
+expand_to_text_length = true
+
 [connection signal="timeout" from="MedicineWoman/Dialogue/Timer" to="MedicineWoman/Dialogue" method="_on_timer_timeout"]
+[connection signal="timeout" from="Blacksmith/DialogueBlk/Timer2" to="Blacksmith/DialogueBlk" method="_on_timer_timeout"]
