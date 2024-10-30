@@ -1,13 +1,6 @@
 import openai
 import json
 import aiot_gpt
-openai.api_key = open("key.txt", 'r').read().strip('\n')  # host the api on an endpoint such that only the game can make calls to it
-from openai import OpenAI
-
-client = OpenAI(
-    api_key=openai.api_key,
-)
-
 query = ''
 
 

@@ -1,11 +1,26 @@
-from pyexpat.errors import messages
-
+import subprocess
 import openai
 import json
 
-openai.api_key = open("key.txt", 'r').read().strip('\n')  # host the api on an endpoint such that only the game can make calls to it
-import openai
+subprocess.run(["ssh-agent", "-s"], check=True, text=True, capture_output=True)
+subprocess.run(["ssh-add", "../key.txt"], check=True)
+remote_user = "taylorme5"
+remote_host = "tst1000.cs.appstate.edu"
+remote_key_path = "~/open_api_key.txt" 
+try:
+    result = subprocess.run(
+        ["ssh", f"{remote_user}@{remote_host}", f"cat {remote_key_path}"],
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    # Retrieve and store the API key
+    openai.api_key = result.stdout.strip()
+    print("API key retrieved successfully.")
 
+except subprocess.CalledProcessError as e:
+    print("Error retrieving API key:", e.stderr)
+    openai.api_key = None
 
 class AiotGpt:
     def __init__(self):
