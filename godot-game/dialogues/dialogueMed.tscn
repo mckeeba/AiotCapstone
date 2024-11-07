@@ -1,17 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://c73omovktjykj"]
 
-[ext_resource type="Texture2D" uid="uid://c4rdlj0fekdv5" path="res://art/border_05.png" id="1_anebw"]
-[ext_resource type="Script" path="res://dialogues/dialogueSetmed.gd" id="1_fjg64"]
+[ext_resource type="Script" path="res://dialogues/dialogueSetmed.gd" id="1_ot215"]
+[ext_resource type="Texture2D" uid="uid://c4rdlj0fekdv5" path="res://art/border_05.png" id="2_a4hea"]
 
-[node name="Dialogue" type="CanvasLayer"]
-script = ExtResource("1_fjg64")
+[node name="DialogueMed" type="CanvasLayer"]
+script = ExtResource("1_ot215")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 offset_left = 275.0
 offset_top = 91.0
 offset_right = 806.0
 offset_bottom = 268.0
-texture = ExtResource("1_anebw")
+texture = ExtResource("2_a4hea")
 region_rect = Rect2(3.5, 0.75, 37, 41.5)
 patch_margin_top = 2
 
