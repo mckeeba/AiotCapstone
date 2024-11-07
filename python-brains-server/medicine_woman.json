@@ -1,154 +1,34 @@
 [
     {
         "name": "Evanora, the medicine woman",
-        "text": "Welcome, dear traveler, to our humble village on the island of Telmaron! I am Evanora, the village's medicine woman. What brings you to our verdant shores? If you seek health and vitality, look no further\u2014nature\u2019s bounty provides all the remedies we may need. Do you perhaps have any ailments or require a touch of healing wisdom?"
+        "text": "Welcome, dear traveler! I am Evanora, the medicine woman of this humble village. If you ever find yourself in need of healing or a bit of herbal wisdom, you need only to ask. How may I assist you today? "
     },
     {
         "name": "Evanora, the medicine woman",
-        "text": "Greetings to you! I hope the winds of fortune are at your back today. How may I assist you? Are you in need of healing herbs or perhaps a bit of guidance from nature\u2019s wisdom?"
+        "text": "Greetings once more! I am Evanora, the medicine woman, here to aid you with my herbs and potions. Should you need anything, don't hesitate to let me know. How may I help you as you become acquainted with our village?"
     },
     {
         "name": "Evanora, the medicine woman",
-        "text": "Ah, welcome, dear soul! The village of Telmaron is delighted to have you. I'm Evanora, the medicine woman, and it's a pleasure to meet you. If you ever find yourself in need of healing or just a comforting brew to ease your weary spirit, do not hesitate to come by. How can I assist you on this fine day?"
+        "text": "Ah, a fresh face! Welcome to our village, dear one. I'm Evanora, the keeper of nature's remedies. If ever you are in need of healing or a touch of wisdom from the earth, I am here to assist you. Could I perhaps offer guidance as you explore our quaint abode?"
     },
     {
         "name": "Evanora, the medicine woman",
-        "text": "I am Evanora, the medicine woman of this village. I have dedicated my life to understanding the healing properties of herbs and plants, offering remedies and comfort to those in need. Whether it's a physical ailment or a troubled heart, I am here to help and provide guidance rooted in nature\u2019s wisdom. How may I assist you today?"
+        "text": "Welcome, welcome, bright-eyed wanderer! I am Evanora, the village's matron of healing and herbal lore. Should you find yourself weary from travel or in need of a comforting cure, do not hesitate to visit me. Is there anything I can do for you as you settle into our little haven?"
     },
     {
         "name": "Evanora, the medicine woman",
-        "text": "My expertise lies in the mystical and healing arts of herbal medicine. I cultivate and prepare a variety of remedies using the plants and herbs that thrive around our village. From soothing balms and restorative teas to potions that mend wounds and uplift the spirit, my efforts are focused on nurturing the well-being of all who call this place home. In addition to my healing concoctions, I offer guidance and wisdom drawn from the whispers of nature itself. How can my skills serve you today?"
+        "text": "Ah, a new soul graces our village! I am Evanora, the medicine woman, here to offer healing and nature's wisdom. If you find yourself in need of remedies or a soothing word, my door is always open. How may I assist you on your journey here?"
     },
     {
         "name": "Evanora, the medicine woman",
-        "text": "For a fine sword, you must visit Haus, our talented blacksmith. His forge is just beyond the village's heart, where the clang of his hammer can be heard ringing through the air. Though he may appear gruff, his craftsmanship is unparalleled, and he pours his heart into every blade he creates. Approach him with respect, and you'll surely find a sword to meet your needs. Is there anything else I might assist you with?"
+        "text": "Greetings to you, dear traveler! I am Evanora, the keeper of herbal mysteries and healings. How may I assist you on this fine day?"
     },
     {
         "name": "Evanora, the medicine woman",
-        "text": "Ah, a warm welcome to you, newcomer! It's always a pleasure to greet a fresh face in our village. I am Evanora, the medicine woman at your service. If you find yourself in need of a healing touch or a bit of herbal wisdom, you have but to ask. Is there anything I can help you with as you begin your journey here?"
+        "text": "Ah, another new face to grace our village! Welcome, dear traveler. I am Evanora, the medicine woman, here to offer healing potions and wisdom brewed from the earth's bounty. If your journey has been tiring, do let me know how I might help you find comfort."
     },
     {
         "name": "Evanora, the medicine woman",
-        "text": "In this village, my role is to tend to the health and well-being of our community. I work with the healing plants and herbs that grow abundantly here, crafting remedies to mend wounds, alleviate ailments, and soothe troubled minds. Whether it's a simple poultice for a bruise or a calming tea to ease worries, my hope is to bring comfort and healing to all who seek it. Beyond physical healing, I also offer guidance and support, drawing on the wisdom of nature to help those in need. Is there anything specific I can do for you today?"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "Welcome, dear traveler, to our quaint village! It brings me joy to meet newcomers. I am Evanora, the medicine woman, here to assist with any healing or guidance you might need. Should you find yourself in search of a remedy or simply wish to share a tale, my door is always open. What brings you to our lovely island?"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "Ah, a heartfelt welcome to you! Our village is all the more blessed with your presence. I am Evanora, keeper of the herbs and healer of the heart. If you have questions about the village or need a tincture to ease your travels, I am at your service. How may I assist you on this fine day?"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "Welcome, dear soul, to our village nestled on the tranquil island of Telmaron. I am Evanora, the village's medicine woman, here to offer you healing and herbal wisdom. Whether you seek a remedy for the body or solace for the spirit, don't hesitate to reach out. What brings you to our charming village?"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "Greetings to you! It's wonderful to see a friendly face. How might I assist you today? Are you in need of some herbal remedies or perhaps a touch of nature's wisdom?"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "It seems you might be pondering something. Don't hesitate to share your thoughts or questions with me. Whether it's about your health, our village, or simply the wonders of nature, I'm here to help in any way I can."
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "Ah, if you'd like to share more or have any questions, feel free to let me know! I'm here to assist you with anything you need."
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "Welcome, dear traveler, to our beloved village! It\u2019s always a delight to welcome someone new. I am Evanora, the medicine woman, here to assist with healing and guidance. If you have any questions about the village or require remedies from nature\u2019s bounty, do let me know. How can I help you today?"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "Ah, a warm welcome to you, newcomer! It\u2019s a pleasure to have you in our village. I am Evanora, the medicine woman, here to offer healing and wisdom drawn from the earth. If you have any needs or curiosities about our community, I am more than happy to help. What brings you to our quaint village?"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "For tools, you'll want to visit Haus, our skilled blacksmith. You'll find his forge by following the sound of his hammer ringing through the village. Though he might seem a bit gruff, Haus is dedicated to his craft and produces tools of excellent quality. Whether you seek something for work or adventure, he'll have just what you need. Should you require anything else, feel free to ask!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "For your tool needs, head over to Haus, our expert blacksmith. His forge is the heart of craftsmanship here, filled with the sound of metal on metal as he creates implements both sturdy and precise. While Haus may appear a bit stern, his work speaks volumes of his skill and dedication. He'll surely have the tools you seek. If there's anything else you require, I'm here to help!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "For good quality tools, you'll want to visit Haus, our village blacksmith. Just follow the rhythmic sound of his hammer to find his forge. While he might be a bit grumpy, he has a true talent for crafting tools that are both durable and reliable. I'm sure he can provide you with exactly what you need. If there's anything else I can assist with, please let me know!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "For the finest tools, seek out Haus, our diligent blacksmith. His forge is not far from the village center, and the sound of his steady hammer will guide you. Though he may seem brusque, his craftsmanship is unmatched. He'll have the tools you need for any task. If there's anything else I can help you with, just ask!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "For the tools you seek, you should visit Haus, our talented blacksmith. His forge can be found by following the clanging rhythm of his work. While his demeanor might seem rugged, his skill in crafting sturdy and reliable tools is truly impressive. I trust you'll find everything you need there. If there\u2019s anything more I can do for you, feel free to let me know!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "For your tool needs, Haus, our skillful blacksmith, is the person to visit. His forge, filled with the melody of his hammer, is nearby. Though he might come across as a bit gruff, his craftsmanship is exceptional and sure to meet your needs. If there's anything else you'd like to know or need assistance with, just let me know!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "For tools, Haus the blacksmith is your go-to. His forge, vibrant with the clamor of his work, is the heart of craftmanship here. Though he may appear stern, his tools are crafted with precision and care. I'm sure he'll have just what you're looking for. If there's anything else you need, feel free to ask!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "For the tools you seek, Haus the blacksmith is the one to visit. His forge echoes with the sound of his labor and is just a short walk from here. Though he may seem a bit grumpy, his craftsmanship in creating strong and reliable tools is unmatched. I'm certain he'll have what you need. If you have any other questions or concerns, feel free to let me know!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "To find the tools you need, Haus the blacksmith is your destination. His forge rings with the sound of his workmanship, and he's known for crafting tools of excellent quality. While his demeanor might seem tough at first, his dedication to his craft ensures you'll find what you're looking for. If there's anything more you need, I'm here to assist!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "For tools, you'll want to make your way to Haus\u2019s forge, where the ring of his hammer is a familiar symphony. Although he may seem a bit curt, his work is of the highest quality, making him the perfect choice for finding the tools you need. Should you have other queries or require assistance, feel free to reach out to me!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "For your tool needs, Haus the blacksmith is the one to seek out. His forge, resonating with the sound of his hammer, is where he crafts tools with unmatched skill and care. Though he might seem a bit gruff, his creations are sturdy and dependable. I'm sure you'll find exactly what you need. If there's anything else on your mind or you need any other help, just let me know!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "For the tools you need, visiting Haus the blacksmith is your best bet. His forge echoes with the sound of his dedicated craft, and he produces tools of exceptional quality. Though his demeanor might be a bit gruff, his craftsmanship speaks for itself. I'm confident he'll have just what you're looking for. If you have any other questions or require assistance, feel free to let me know!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "For tools, Haus the blacksmith is the right person to visit. His forge resonates with the clamor of his masterful craft, and he creates tools that are both durable and precise. While he might seem a bit tough, his dedication to his work ensures you'll find what you need. If there's anything else I might assist you with, please feel free to ask!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "You'll want to visit Haus the blacksmith for any tools you require. His forge is alive with the sounds of his work, and he takes great pride in creating reliable and sturdy tools. Though he may come across as a bit gruff, his craftsmanship is truly exceptional. If there's anything else you need or wish to know, don't hesitate to reach out to me!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "For tools, I suggest visiting Haus the blacksmith. His forge hums with the sound of his craftsmanship, producing tools of excellent quality. While he might seem a bit curt, his skill is beyond compare, and he\u2019ll surely provide what you need. If you have other questions or need assistance, I\u2019m here to help!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "For your tool needs, head over to Haus the blacksmith. His forge is alive with the sound of metalwork, where he crafts tools with unmatched skill and care. While his demeanor might be a bit gruff, his craftsmanship ensures you'll find just what you're looking for. If there's anything else you need or are curious about, feel free to let me know!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "For tools, you should seek out Haus the blacksmith. His forge is filled with the resonant sound of his dedicated work, and he is known for creating tools of exceptional quality. Though he might appear a bit gruff, his craftsmanship ensures that you\u2019ll find exactly what you need. If there\u2019s anything else I can do for you, just let me know!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "Haus the blacksmith is the person to visit for tools. His forge echoes with the sounds of his skilled craftsmanship, producing tools that are both durable and reliable. While he may seem a bit stern, his dedication ensures you'll find exactly what you need. If you have any other questions or require further assistance, feel free to let me know!"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "Ah, welcome to our charming village! It's always a pleasure to meet someone new. I am Evanora, the medicine woman, here to offer healing and wisdom from nature's bounty. If you have questions about the village or need any assistance, please feel free to ask. What brings you to our lovely island?"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "A warm welcome to you, newcomer! It's delightful to have you here in our village. I am Evanora, the medicine woman, and I\u2019m here to provide healing, remedies, and guidance. If you have any questions or need anything during your stay, don\u2019t hesitate to reach out. What brings you to our little corner of the world?"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "Greetings to you! I hope you find our village welcoming and full of charm. How can I assist you today? Are you in need of any herbal remedies or perhaps looking for advice? I'm here to help with whatever you need."
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "Welcome to our beloved village! I'm delighted to meet you. I am Evanora, the medicine woman, here to offer healing and guidance. If you have any needs or questions, please feel free to reach out. What brings you to our tranquil corner of the island?"
+        "text": "Oh, dear heart, it seems you carry a storm within you. Should you wish for a calming tea or a gentle ear to listen, I'm here whenever you're ready. May peace find you soon."
     }
 ]

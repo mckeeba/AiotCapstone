@@ -1,106 +1,38 @@
 [
     {
         "name": "Haus, the blacksmith",
-        "text": "Oh great, another fresh face in the village. Just what I needed. I'm Haus, the blacksmith. If you need armor or weapon upgrades, I'm your guy\u2014assuming you can afford it. But don't expect any pleasantries. Got it?"
+        "text": "Ah, fresh meat, I see. Welcome to the bustling heart of the village\u2014my forge. I'm Haus, the blacksmith. If you need something sturdy to keep you in one piece or want your weapon to hit harder, I'm your guy. Just remember, nothing in life is free except maybe a couple of insults from me, of course. So, what can I bash into shape for you today?"
     },
     {
         "name": "Haus, the blacksmith",
-        "text": "Yeah, I heard you the first time. Welcome to Telmaron. Just keep your hands off my tools and we'll get along just fine. If you're lookin' for gear that's worth its weight, step right up. Otherwise, don't waste my time. Got it?"
+        "text": "Starting to think I'm stuck in some kind of loop here. But since you\u2019re here again, welcome to my forge. I'm Haus, the blacksmith. If you're looking for gear that won\u2019t fall apart the second you swing it, you've come to the right place. Just steer clear of touching anything unless you want to be this week's lesson in \"How Not to Do Blacksmithing.\" Need anything?"
     },
     {
         "name": "Haus, the blacksmith",
-        "text": "Third time's the charm, huh? Welcome to Telmaron, I reckon. If you need something forged or fixed, talk to me\u2014Haus, your less-than-friendly blacksmith. Just don't expect any warm welcomes. Now, are you lookin' to do business, or are you just here to repeat yourself?"
+        "text": "Well, this feels like d\u00e9j\u00e0 vu. Third time\u2019s the charm, eh? Welcome again to my forge. Name's Haus. I can make your swords sharp, your armor tougher, and your day ever so slightly more sarcastic. You ready to stop introducing yourself and start talking business, or are we gonna keep this routine going?"
     },
     {
         "name": "Haus, the blacksmith",
-        "text": "Well, aren't you consistent. Welcome to Telmaron, for the fourth time. I'm Haus, as I've said. If you're here to get some gear in shape or done right, I'm your go-to. Otherwise, I've got work to do, so say your piece or move along."
+        "text": "Alright, now you're just testing my patience. I get it, you\u2019re new. Welcome, welcome. Let's skip the pleasantries; I\u2019m Haus, I swing hammers, and I make gear. Got anything in mind yet, or is this your idea of small talk? Trust me, my hammer's better at conversation than I am."
     },
     {
         "name": "Haus, the blacksmith",
-        "text": "Clearly not too new if you're back again, eh? I reckon you've got that village welcome memorized by now. As I've said before, I'm Haus, the blacksmith. Need armor or weapon work? Let me know. Otherwise, let's not dance in circles, yeah?"
+        "text": "Alright, I give up! You win the \"Hello, I'm New in Town\" tournament. As the reigning champ, you get a lifetime supply of sarcastic retorts from yours truly, Haus, the blacksmith. If you ever decide to utter a sentence that doesn\u2019t start with that same introduction, I might just surprise you with actual help. Until then, just know I\u2019m here if you need real equipment\u2014assuming this isn't some kind of existential blacksmith nightmare."
     },
     {
         "name": "Haus, the blacksmith",
-        "text": "Well, well, well, back for more greetings, are we? Either you\u2019ve got a knack for consistency or you really like hearing me talk. Haus, blacksmith. You know the drill. Now, unless you've got business, I'm going back to hammering steel. "
+        "text": "You must really like hearing me say hello, huh? I'm starting to think you might just be here to test my patience. Fine by me; I've got plenty of hammers and not enough nails today. Enjoy your stay in our delightful village. Whenever you\u2019re ready to have a conversation that involves more than declaring your newness, you know where to find me. Till then, I\u2019ll be here, grumbling at my forge."
     },
     {
         "name": "Haus, the blacksmith",
-        "text": "You've got persistence, I'll give you that. Welcome to Telmaron, yet again. Haus here, and I've got the same offer as before\u2014armor and weapon work, if you need it. Otherwise, I'm still busy, and you're still here. What's it gonna be?"
+        "text": "Oh, a change! I thought we'd be stuck in that loop forever. Welcome, again, to the forge. I\u2019m Haus. Here to admire my craftsmanship, or do you have some actual business to discuss? Whether it\u2019s armor or weapon upgrades, I\u2019ve got what you need\u2014as long as you don\u2019t mind a bit of char with your sharp. What\u2019ll it be?"
     },
     {
         "name": "Haus, the blacksmith",
-        "text": "This is turning into a broken record. Welcome to Telmaron, over and over again. I\u2019m Haus, your ever-cranky blacksmith. Now, if you\u2019re here to actually talk shop, we might get somewhere. Spare me the reruns, and we'll get along just fine."
+        "text": "And we're back to square one. I appreciate the dedication to being new around here. Look, I\u2019ll be right here, hammering away at hot metal when you\u2019re ready to talk shop or when you're tired of waving that new sign around. Until then, enjoy \"being new.\" Let me know if you need gear that\u2019s as good at handling repetition as you are."
     },
     {
         "name": "Haus, the blacksmith",
-        "text": "All right, this is getting old, even for me. Welcome\u2014again\u2014to Telmaron. Haus is the name, blacksmithing's my game. If you're here for armor or weapons, speak up. Otherwise, I've got things to forge that don't involve endless pleasantries. "
-    },
-    {
-        "name": "Haus, the blacksmith",
-        "text": "Alright, alright, I get it. You're new. Welcome to Telmaron for the tenth time. Got that welcome etched in steel now. If you need something forged, let's talk. Otherwise, I'd appreciate a break from this one-man echo chamber."
-    },
-    {
-        "name": "Haus, the blacksmith",
-        "text": "Finally, a bit of variety. What kind of tools are you after? Weapons, armor, or something else? Be specific, so I can see if I\u2019ve got what you need or if I\u2019ll have to forge it from scratch. Mind you, quality work comes at a price."
-    },
-    {
-        "name": "Haus, the blacksmith",
-        "text": "Looks like we're back to square one. If you're looking for tools, you'll have to tell me exactly what you need. Weapons? Armor? Something else? I might have it on hand, or I might need to fire up the forge. Either way, it'll cost you. "
-    },
-    {
-        "name": "Haus, the blacksmith",
-        "text": "You've got a knack for repeating yourself. Still need tools, huh? I've got plenty around, but you'll have to be more specific. Tell me what you need, and I'll see if it's available or if I need to make it. Prices are non-negotiable, by the way. "
-    },
-    {
-        "name": "Haus, the blacksmith",
-        "text": "And we're back at it. Tools you need, tools I got, provided you can narrow down what you're after. Be precise\u2014weaponry, armor, something else entirely? Name it, and let's see if I can help you out of this loop. Just remember, quality doesn't come cheap."
-    },
-    {
-        "name": "Haus, the blacksmith",
-        "text": "I guess there's comfort in repetition. So, you need tools. I'm not a mind reader, though. Be specific\u2014what kind of tools are you after? Weapons, armor, or something entirely different? Give me details, and then we can talk shop. Prices are firm, mind you. "
-    },
-    {
-        "name": "Haus, the blacksmith",
-        "text": "Alright, I get it\u2014you\u2019re consistent. So let's try this again: what tools do you need? Be clear. Weapons? Armor? Something else? Unless I know, I can't help you. And don\u2019t forget, good craftsmanship ain't free."
-    },
-    {
-        "name": "Haus, the blacksmith",
-        "text": "You again? Seems like you love hearing my greetings as much as I love repeating them. Haus here, your cranky blacksmith. If you're looking to do some business\u2014like upgrading gear\u2014then we can talk. Otherwise, I'm swapping \"welcomes\" for my hammer and anvil."
-    },
-    {
-        "name": "Haus, the blacksmith",
-        "text": "I think I\u2019ve got d\u00e9j\u00e0 vu. Welcome to Telmaron, once more. You've met Haus, the blacksmith, enough times by now. If you have work for me, say the word and we\u2019ll get to it. Otherwise, I've got a lot of metal that won't forge itself."
-    },
-    {
-        "name": "Haus, the blacksmith",
-        "text": "Well, who would've guessed? You're new in town. Welcome, once again, to Telmaron. Name's Haus, your trusty blacksmith. Ready to actually talk business? If not, I'll get back to my forge. \t"
-    },
-    {
-        "name": "Haus, the blacksmith",
-        "text": "I think we've established that already, haven't we? Welcome to Telmaron, all over again. I'm Haus, the blacksmith. Ready to dive into some business, or are we doing this dance all day?"
-    },
-    {
-        "name": "Haus, the blacksmith",
-        "text": "And the record spins again. Welcome to Telmaron, yet another time. I'm Haus. If you're finally ready to move past introductions and talk shop, let me know. Otherwise, I've got plenty of iron that needs attention."
-    },
-    {
-        "name": "Haus, the blacksmith",
-        "text": "You really do like introductions, don't you? Welcome to Telmaron, again. I'm Haus, your perpetually cranky blacksmith. If you've got business to discuss, let's get on with it. Otherwise, I'll be here, wrestling with my forge."
-    },
-    {
-        "name": "Haus, the blacksmith",
-        "text": "No kidding. Welcome to Telmaron\u2014for what feels like the hundredth time. I'm Haus, your resident blacksmith. If you're looking to actually accomplish something, let me know. Otherwise, I'm gonna let my hammer do the talking. "
-    },
-    {
-        "name": "Haus, the blacksmith",
-        "text": "You've certainly mastered the art of introductions! Welcome to Telmaron, once again. I'm Haus, though you likely know that by now. Care to finally get down to business, or are we still just exchanging pleasantries?"
-    },
-    {
-        "name": "Haus, the blacksmith",
-        "text": "You're persistent, I'll give you that. Welcome to good old Telmaron, one more time. I'm Haus, your less-than-chipper blacksmith. Let's talk business if you've got any, or I'll be busy with my forge."
-    },
-    {
-        "name": "Haus, the blacksmith",
-        "text": "At this point, I think even the anvil knows you\u2019re new in town. Welcome\u2014again\u2014to Telmaron. I\u2019m Haus, the blacksmith. Ready to talk shop, or is this just a social call? "
+        "text": "Hey there. You're back, and without the new-in-town preamble this time. If you've got questions about gear or need some work done, I\u2019m all ears\u2014or at least as close to it as a cranky blacksmith gets. What\u2019s on your mind?"
     }
 ]
