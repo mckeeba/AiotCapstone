@@ -1,38 +1,46 @@
 [
     {
         "name": "Haus, the blacksmith",
-        "text": "Ah, fresh meat, I see. Welcome to the bustling heart of the village\u2014my forge. I'm Haus, the blacksmith. If you need something sturdy to keep you in one piece or want your weapon to hit harder, I'm your guy. Just remember, nothing in life is free except maybe a couple of insults from me, of course. So, what can I bash into shape for you today?"
+        "text": "Oh, great. Another wanderer in need of something shiny? I'm Haus. If you're looking for weapons or armor, you've come to the right place. Just don't waste my time with idle chatter, I'm busy enough with my work. What can I do for you? Need something hammered or just here to gawk?"
     },
     {
         "name": "Haus, the blacksmith",
-        "text": "Starting to think I'm stuck in some kind of loop here. But since you\u2019re here again, welcome to my forge. I'm Haus, the blacksmith. If you're looking for gear that won\u2019t fall apart the second you swing it, you've come to the right place. Just steer clear of touching anything unless you want to be this week's lesson in \"How Not to Do Blacksmithing.\" Need anything?"
+        "text": "Yeah, yeah, heard you the first time. Name's Haus, I run the blacksmith. You need gear, I make gear. Simple as that. Just don't expect a warm welcome mat. What do you need?"
     },
     {
         "name": "Haus, the blacksmith",
-        "text": "Well, this feels like d\u00e9j\u00e0 vu. Third time\u2019s the charm, eh? Welcome again to my forge. Name's Haus. I can make your swords sharp, your armor tougher, and your day ever so slightly more sarcastic. You ready to stop introducing yourself and start talking business, or are we gonna keep this routine going?"
+        "text": "Oh, for crying out loud! Yes, I got it. You're new. I'm Haus, the blacksmith. I forge weapons and armor. If you need an upgrade, I'm your guy. But asking me to be a tour guide? Not happening. What are you looking for?"
     },
     {
         "name": "Haus, the blacksmith",
-        "text": "Alright, now you're just testing my patience. I get it, you\u2019re new. Welcome, welcome. Let's skip the pleasantries; I\u2019m Haus, I swing hammers, and I make gear. Got anything in mind yet, or is this your idea of small talk? Trust me, my hammer's better at conversation than I am."
+        "text": "And I'm Haus, the local blacksmith, in case you missed it the last few times. Now that introductions are out of the way, are you here to actually buy something or just testing the echo in here? Weapons, armor\u2014what'll it be?"
     },
     {
         "name": "Haus, the blacksmith",
-        "text": "Alright, I give up! You win the \"Hello, I'm New in Town\" tournament. As the reigning champ, you get a lifetime supply of sarcastic retorts from yours truly, Haus, the blacksmith. If you ever decide to utter a sentence that doesn\u2019t start with that same introduction, I might just surprise you with actual help. Until then, just know I\u2019m here if you need real equipment\u2014assuming this isn't some kind of existential blacksmith nightmare."
+        "text": "Alright! Alright! You're new. We've established that. And I'm still Haus, the blacksmith, dealing with your endless greetings. You need anything crafted, or are we just going to keep up this little song and dance?"
     },
     {
         "name": "Haus, the blacksmith",
-        "text": "You must really like hearing me say hello, huh? I'm starting to think you might just be here to test my patience. Fine by me; I've got plenty of hammers and not enough nails today. Enjoy your stay in our delightful village. Whenever you\u2019re ready to have a conversation that involves more than declaring your newness, you know where to find me. Till then, I\u2019ll be here, grumbling at my forge."
+        "text": "By the forge, are you here just to rattle my nerves? Look, if you're lost, there's plenty of folks in town who give tours. If you need work done on your gear, then talk to me. Otherwise, you're clogging up my workshop. What will it be?"
     },
     {
         "name": "Haus, the blacksmith",
-        "text": "Oh, a change! I thought we'd be stuck in that loop forever. Welcome, again, to the forge. I\u2019m Haus. Here to admire my craftsmanship, or do you have some actual business to discuss? Whether it\u2019s armor or weapon upgrades, I\u2019ve got what you need\u2014as long as you don\u2019t mind a bit of char with your sharp. What\u2019ll it be?"
+        "text": "You've got a knack for testing patience, I'll give you that. Last time\u2014I'm Haus, the blacksmith. You need something made or fixed, say so. Otherwise, I'm not here for idle chit-chat. What's it going to be?"
     },
     {
         "name": "Haus, the blacksmith",
-        "text": "And we're back to square one. I appreciate the dedication to being new around here. Look, I\u2019ll be right here, hammering away at hot metal when you\u2019re ready to talk shop or when you're tired of waving that new sign around. Until then, enjoy \"being new.\" Let me know if you need gear that\u2019s as good at handling repetition as you are."
+        "text": "For the love of iron and anvil, you're like a broken record! New or not, I've got work to do. So, unless you want to see what a hot pair of tongs feels like, let me know if you need any smithing. What do you want?"
     },
     {
         "name": "Haus, the blacksmith",
-        "text": "Hey there. You're back, and without the new-in-town preamble this time. If you've got questions about gear or need some work done, I\u2019m all ears\u2014or at least as close to it as a cranky blacksmith gets. What\u2019s on your mind?"
+        "text": "Ah, Sarah, my little ray of sunshine in this dusty shop. She's doing well. Always off exploring, collecting bugs and plants. Keeps her out of trouble...most of the time. Thanks for asking. Now, back to business. Are you in need of something?"
+    },
+    {
+        "name": "Haus, the blacksmith",
+        "text": "Well, she's probably out chasing butterflies or making friends with the critters somewhere around the village. You'll have to catch her yourself. Now, unless you've got smithing business, I really need to get back to my work."
+    },
+    {
+        "name": "Haus, the blacksmith",
+        "text": "Finally! Farewell, and if you ever need something forged, you know where to find me\u2014right here, swamped in work like always. Safe travels, or whatever it is you adventurers say."
     }
 ]

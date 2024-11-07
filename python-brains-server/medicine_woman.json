@@ -1,34 +1,22 @@
 [
     {
         "name": "Evanora, the medicine woman",
-        "text": "Welcome, dear traveler! I am Evanora, the medicine woman of this humble village. If you ever find yourself in need of healing or a bit of herbal wisdom, you need only to ask. How may I assist you today? "
+        "text": "Ah, welcome to our humble little village on the island of Telmaron! I'm Evanora, the medicine woman. If you ever find yourself in need of a remedy or simply some kind words, do come by. The plants around here are quite magical, you know. Is there anything I can help you with today?"
     },
     {
         "name": "Evanora, the medicine woman",
-        "text": "Greetings once more! I am Evanora, the medicine woman, here to aid you with my herbs and potions. Should you need anything, don't hesitate to let me know. How may I help you as you become acquainted with our village?"
+        "text": "Hello again, traveler! Welcome once more to our charming village. I'm Evanora, ready to tend to any ailments or offer guidance. Please, feel free to share what brings you here or if there's any way I can be of assistance. The island has many wonders, and I'm sure you'll find your place among them."
     },
     {
         "name": "Evanora, the medicine woman",
-        "text": "Ah, a fresh face! Welcome to our village, dear one. I'm Evanora, the keeper of nature's remedies. If ever you are in need of healing or a touch of wisdom from the earth, I am here to assist you. Could I perhaps offer guidance as you explore our quaint abode?"
+        "text": "Ah, a new face is always a welcome sight in our village! I\u2019m Evanora, the medicine woman, and I\u2019m here to help you with any herbal needs or simply to share some words of wisdom. Do you have any questions about our lovely island of Telmaron, or perhaps need assistance settling in?"
     },
     {
         "name": "Evanora, the medicine woman",
-        "text": "Welcome, welcome, bright-eyed wanderer! I am Evanora, the village's matron of healing and herbal lore. Should you find yourself weary from travel or in need of a comforting cure, do not hesitate to visit me. Is there anything I can do for you as you settle into our little haven?"
+        "text": "Greetings and welcome to our quaint corner of the world! I'm Evanora, the medicine woman. I tend to the health and well-being of our villagers. Should you need a remedy crafted from the enchanted herbs of Telmaron or wish for a bit of wisdom to guide your steps, I'm here for you. How can I assist you today?"
     },
     {
         "name": "Evanora, the medicine woman",
-        "text": "Ah, a new soul graces our village! I am Evanora, the medicine woman, here to offer healing and nature's wisdom. If you find yourself in need of remedies or a soothing word, my door is always open. How may I assist you on your journey here?"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "Greetings to you, dear traveler! I am Evanora, the keeper of herbal mysteries and healings. How may I assist you on this fine day?"
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "Ah, another new face to grace our village! Welcome, dear traveler. I am Evanora, the medicine woman, here to offer healing potions and wisdom brewed from the earth's bounty. If your journey has been tiring, do let me know how I might help you find comfort."
-    },
-    {
-        "name": "Evanora, the medicine woman",
-        "text": "Oh, dear heart, it seems you carry a storm within you. Should you wish for a calming tea or a gentle ear to listen, I'm here whenever you're ready. May peace find you soon."
+        "text": "Welcome, fresh-faced traveler, to our village! I'm Evanora, and it seems the winds have whispered your arrival to me many times. Whether you seek healing, advice, or simply a listening ear, my door is always open to you. Is there anything I can do to make your transition here smoother?"
     }
 ]
