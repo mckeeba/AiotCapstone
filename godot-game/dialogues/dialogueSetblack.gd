@@ -112,3 +112,6 @@ func _input(event):
 		else:
 			# Proceed to the next dialogue if no input is expected
 			next_script()
+			# End dialogue with the escape key
+	if d_active and event.is_action_pressed("ui_cancel"):
+		end_dialogue()
