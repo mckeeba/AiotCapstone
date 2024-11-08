@@ -13,17 +13,17 @@ func _ready():
 	http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)
-	$NinePatchRect3.visible = false
-	$LineEdit3.visible = false  # Hide input box until needed
+	$NinePatchRect5.visible = false
+	$LineEdit5.visible = false  # Hide input box until needed
 	set_process_input(true)
 
 
 func start():
 	if d_active:
 		return  # Prevent starting dialogue again if already active
-	$NinePatchRect3.visible = true
-	$LineEdit3.visible = true  # Show the input box for the player
-	$LineEdit3.grab_focus()  # Give focus to the input box for typing
+	$NinePatchRect5.visible = true
+	$LineEdit5.visible = true  # Show the input box for the player
+	$LineEdit5.grab_focus()  # Give focus to the input box for typing
 	d_active = true
 	current_dialogue_id = 0  # Start with the first dialogue entry
 	next_script()
@@ -44,13 +44,13 @@ func next_script():
 			current_dialogue_id += 1
 		else:
 			# Allow the player to respond by typing into the input box
-			$LineEdit3.visible = true
-			$LineEdit3.grab_focus()
+			$LineEdit5.visible = true
+			$LineEdit5.grab_focus()
 
 func show_dialogue(index: int):
 	if index < dialogue.size():
-		$NinePatchRect3/Name3.text = dialogue[index]['name']
-		$NinePatchRect3/Chat3.text = dialogue[index]['text']
+		$NinePatchRect5/Name5.text = dialogue[index]['name']
+		$NinePatchRect5/Chat5.text = dialogue[index]['text']
 
 # Function to send HTTP request to the server
 func send_request_to_server(user_input: String):
@@ -95,8 +95,8 @@ func _http_request_completed(result, response_code, headers, body):
 
 # Function to end the dialogue session
 func end_dialogue():
-	$NinePatchRect3.visible = false
-	$LineEdit3.visible = false
+	$NinePatchRect5.visible = false
+	$LineEdit5.visible = false
 	d_active = false
 	print("Dialogue finished")
 
@@ -104,11 +104,14 @@ func _input(event):
 	# Check for mouse clicks or pressing Enter/Space to advance dialogue
 	if d_active and (event is InputEventMouseButton and event.is_pressed() or event.is_action_pressed("ui_accept")):
 		# If input box is visible, check for player input
-		if $LineEdit3.visible and $LineEdit3.text != "" and event.keycode == KEY_ENTER:
+		if $LineEdit5.visible and $LineEdit5.text != "" and event.keycode == KEY_ENTER:
 			# Send player's input to the server
-			send_request_to_server($LineEdit3.text)
-			$LineEdit3.text = ""  # Clear the input field after sending
-			$LineEdit3.visible = false  # Hide input box after sending
+			send_request_to_server($LineEdit5.text)
+			$LineEdit5.text = ""  # Clear the input field after sending
+			$LineEdit5.visible = false  # Hide input box after sending
 		else:
 			# Proceed to the next dialogue if no input is expected
 			next_script()
+	# End dialogue with the escape key
+	if d_active and event.is_action_pressed("ui_cancel"):
+		end_dialogue()

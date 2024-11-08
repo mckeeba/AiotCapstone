@@ -11,7 +11,7 @@ func _on_body_entered(body):
 	# Enable interaction when the Player enters the NPC's interaction area
 	if body.name == "Player":
 		# Trigger the dialogue start() function in dialoguePlayer.gd
-		var dialogue = get_parent().get_node("Wizard/DialogueBlk")  # Adjust the path to your Dialogue node
+		var dialogue = get_parent().get_node("Wizard/DialogueWiz")  # Adjust the path to your Dialogue node
 		if dialogue:
 			dialogue.start()
 
