@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://oo526j64hgpo"]
+[gd_scene load_steps=2 format=3 uid="uid://b3kipo0tehr1f"]
 
 [ext_resource type="Texture2D" uid="uid://c4rdlj0fekdv5" path="res://art/border_05.png" id="1_eguv2"]
 
@@ -27,7 +27,7 @@ offset_left = 48.0
 offset_top = 46.0
 offset_right = 488.0
 offset_bottom = 138.0
-text = "Chatting...."
+text = "..."
 
 [node name="Timer4" type="Timer" parent="."]
 wait_time = 0.4

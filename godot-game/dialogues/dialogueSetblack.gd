@@ -1,6 +1,6 @@
 extends CanvasLayer
 @export var npc_name: String  # Name of the NPC for the HTTP request
-@export var api_url: String = "http://localhost:4200/npc_conversation"  # Your Flask server URL
+@export var api_url: String = "http://localhost:4200/"  # Your Flask server URL
 
 var dialogue = []
 var current_dialogue_id = 0
@@ -20,43 +20,43 @@ func _ready():
 
 func start():
 	if d_active:
-		return  # Prevent starting dialogue again if already active
+		return  
 	$NinePatchRect2.visible = true
-	$LineEdit2.visible = true  # Show the input box for the player
-	$LineEdit2.grab_focus()  # Give focus to the input box for typing
+	$LineEdit2.visible = true 
+	$LineEdit2.grab_focus() 
 	d_active = true
+
+
 	current_dialogue_id = 0  # Start with the first dialogue entry
-	 # Disable player movement
+	# Disable player movement
+
 	var player = get_parent().get_parent().get_node("Player")
 	player.set_can_move(false)
 	next_script()
 	
 func next_script():
 	if awaiting_response:
-		# If we're still waiting for the response, don't proceed to the next dialogue
 		return
 	
 	# Move to the next dialogue entry
 	if current_dialogue_id == 0:
-		# On the first interaction, trigger the HTTP request to the server
-		send_request_to_server("hello, I'm new in town")
+		send_greeting_request_to_server()
 	else:
 		# Continue to the next dialogue line
 		if current_dialogue_id < dialogue.size():
 			show_dialogue(current_dialogue_id)
 			current_dialogue_id += 1
 		else:
-			# Allow the player to respond by typing into the input box
 			$LineEdit2.visible = true
 			$LineEdit2.grab_focus()
 
 func show_dialogue(index: int):
 	if index < dialogue.size():
-		$NinePatchRect2/Name2.text = dialogue[index]['name']
+		$NinePatchRect2/Name2.text = 'Haus'
 		$NinePatchRect2/Chat2.text = dialogue[index]['text']
 
 # Function to send HTTP request to the server
-func send_request_to_server(user_input: String):
+func send_convo_request_to_server(user_input: String):
 	var json_data = {
 		"npc_name": 'blacksmith',
 		"user_input": user_input
@@ -67,10 +67,26 @@ func send_request_to_server(user_input: String):
 
 	# Make an HTTP request to the server (non-blocking)
 	http_request.request(
-		api_url,  # URL of the Flask server
+		api_url + 'npc_conversation',  # URL of the Flask server
 		["Content-Type: application/json"],  # Request headers
 		HTTPClient.METHOD_POST,  # HTTP method
 		json_string  # Data to send in the body
+	)
+	
+func send_greeting_request_to_server():
+	var json_data = {
+		"npc_name": 'blacksmith',
+	}
+	var json_string = JSON.stringify(json_data)
+
+	awaiting_response = true  # Mark that we are waiting for a response
+
+	# Make an HTTP request to the server (non-blocking)
+	http_request.request(
+		api_url + 'npc_greeting',  # URL of the Flask server
+		["Content-Type: application/json"],  # Request headers
+		HTTPClient.METHOD_POST, 
+		json_string  
 	)
 
 # Callback function for when the request is completed
@@ -109,7 +125,7 @@ func _input(event):
 		# If input box is visible, check for player input
 		if $LineEdit2.visible and $LineEdit2.text != "" and event.keycode == KEY_ENTER:
 			# Send player's input to the server
-			send_request_to_server($LineEdit2.text)
+			send_convo_request_to_server($LineEdit2.text)
 			$LineEdit2.text = ""  # Clear the input field after sending
 			$LineEdit2.visible = false  # Hide input box after sending
 		else:

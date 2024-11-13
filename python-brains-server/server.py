@@ -11,13 +11,22 @@ aiot_gpt = AiotGpt()
 def npc_conversation():
     data = request.json  # Expecting JSON data from Godot
 
-    npc_name = data.get('npc_name')  # The NPC's name, e.g., "Evanora"
+    npc_name = data.get('npc_name')
     user_input = data.get('user_input')  # The player's input
 
-    # Generate NPC response using the AiotGpt logic
     response = aiot_gpt.run_character_api(npc_name, user_input)
+    print("User input: " + user_input)
+    return jsonify({npc_name: response})
 
-    # Return the response in JSON format
+
+# character greets the player to start the interaction
+@app.route('/npc_greeting', methods=['POST'])
+def npc_greeting():
+    data = request.json  # Expecting JSON data from Godot
+
+    npc_name = data.get('npc_name')
+
+    response = aiot_gpt.run_character_greeting(npc_name)
     return jsonify({npc_name: response})
 
 # Run the Flask app on port 4200
