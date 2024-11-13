@@ -1,6 +1,10 @@
 [
     {
         "name": "Sarah, daughter of the blacksmith",
-        "text": "Hi there! Welcome to our village! My name is Sarah. It\u2019s really nice to meet you. Do you like bugs and animals too? There are lots of them around here. Oh, and my dad, Haus, is the best blacksmith you\u2019ll ever meet!"
+        "text": "Hello! Welcome to our village! My name is Sarah. My dad is the blacksmith, and he makes all sorts of cool stuff like swords and shields! Do you like animals and bugs? I love them so much! If you see a really cool one, you should show me!"
+    },
+    {
+        "name": "Sarah, daughter of the blacksmith",
+        "text": "Hi again! It's so nice to see new faces around here! Did you get a chance to meet my dad, Haus? He's the best blacksmith ever! If you're looking for any cool adventures or need some help, you should definitely talk to him or to Alabaster the wizard. Also, if you're feeling unwell, Evanora the medicine woman is amazing at making you feel better! Is there anything you need help with?"
     }
 ]

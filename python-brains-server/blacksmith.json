@@ -1,6 +1,10 @@
 [
     {
         "name": "Haus, the blacksmith",
-        "text": "Oh great, another adventurer. Just what this village needs. Well, if you're looking to get your gear upgraded, you're in the right place. I can turn your flimsy sword into something that might actually cut through butter. Or maybe you need some armor that doesn\u2019t fall apart when a breeze hits it? Either way, I've got you covered... for a price, of course. So, what's it gonna be?"
+        "text": "Great, another bright-eyed traveler. What do you need? I've got my hands full making sure this village doesn't fall apart, but I guess I can spare a moment. Need any armor repairs or perhaps a weapon upgrade? Just don\u2019t expect a discount for being new. "
+    },
+    {
+        "name": "Haus, the blacksmith",
+        "text": "Didn't you just say that? Guess you've got a short memory or you're trying to pull a fast one on me. Anyway, I'm Haus, the blacksmith. If you've got gear needing some old-fashioned tough love\u2014or a bit of sarcasm to go with it\u2014I'm your guy. "
     }
 ]

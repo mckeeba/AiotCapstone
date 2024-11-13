@@ -4,14 +4,16 @@ extends CharacterBody2D
 @export var speed = 400
 
 var can_interact = false  # Track if the player can interact with an NPC
+
 var can_move = true
-  
+
 func get_input():
 	if not can_move:
 		velocity = Vector2.ZERO
 		animated_sprite_2d.stop()
 		return
-	
+
+
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_direction * speed
 

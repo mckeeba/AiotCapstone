@@ -25,8 +25,11 @@ func start():
 	$LineEdit2.visible = true 
 	$LineEdit2.grab_focus() 
 	d_active = true
-	current_dialogue_id = 0  
+
+
+	current_dialogue_id = 0  # Start with the first dialogue entry
 	# Disable player movement
+
 	var player = get_parent().get_parent().get_node("Player")
 	player.set_can_move(false)
 	next_script()
