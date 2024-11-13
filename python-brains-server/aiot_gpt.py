@@ -112,7 +112,7 @@ class AiotGpt:
         except FileNotFoundError:
             return []
 
-    def run_character(self, character):
+    def run_character_greeting(self, character):
         if character == 'wizard':
             chat_log = self.wizard_logs
             character_name = 'Alabaster, the wizard'
@@ -157,18 +157,7 @@ class AiotGpt:
 
             self.append_to_json(file_path, {"name": character_name, "text": response})
 
-            print(f"{character_name}: {response}")
-
-            query = input('You: ')
-            if query != '_q':
-                chat_log.append({
-                    "role": "user",
-                    "content": query
-                })
-        chat_log.append({
-            "role": "system",
-            "content": "The player has left your post. They will be back later."
-        })
+            return response
 
     def run_character_api(self, character, user_input):
         # Select the appropriate chat log and character file based on the character name

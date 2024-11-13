@@ -1,6 +1,6 @@
 extends CanvasLayer
 @export var npc_name: String  # Name of the NPC for the HTTP request
-@export var api_url: String = "http://localhost:4200/npc_conversation"  # Your Flask server URL
+@export var api_url: String = "http://localhost:4200/"  # Your Flask server URL
 
 var dialogue = []
 var current_dialogue_id = 0
@@ -36,7 +36,7 @@ func next_script():
 	# Move to the next dialogue entry
 	if current_dialogue_id == 0:
 		# On the first interaction, trigger the HTTP request to the server
-		send_request_to_server("hello, I'm new in town")
+		send_greeting_request_to_server()
 	else:
 		# Continue to the next dialogue line
 		if current_dialogue_id < dialogue.size():
@@ -49,11 +49,11 @@ func next_script():
 
 func show_dialogue(index: int):
 	if index < dialogue.size():
-		$NinePatchRect4/Name4.text = dialogue[index]['name']
+		$NinePatchRect4/Name4.text = 'Glork'
 		$NinePatchRect4/Chat4.text = dialogue[index]['text']
 
 # Function to send HTTP request to the server
-func send_request_to_server(user_input: String):
+func send_convo_request_to_server(user_input: String):
 	var json_data = {
 		"npc_name": 'goblin',
 		"user_input": user_input
@@ -64,12 +64,27 @@ func send_request_to_server(user_input: String):
 
 	# Make an HTTP request to the server (non-blocking)
 	http_request.request(
-		api_url,  # URL of the Flask server
+		api_url + 'npc_conversation',  # URL of the Flask server
 		["Content-Type: application/json"],  # Request headers
 		HTTPClient.METHOD_POST,  # HTTP method
 		json_string  # Data to send in the body
 	)
+	
+func send_greeting_request_to_server():
+	var json_data = {
+		"npc_name": 'goblin',
+	}
+	var json_string = JSON.stringify(json_data)
 
+	awaiting_response = true  # Mark that we are waiting for a response
+
+	# Make an HTTP request to the server (non-blocking)
+	http_request.request(
+		api_url + 'npc_greeting',  # URL of the Flask server
+		["Content-Type: application/json"],  # Request headers
+		HTTPClient.METHOD_POST,  # HTTP method
+		json_string  # Data to send in the body
+	)
 # Callback function for when the request is completed
 func _http_request_completed(result, response_code, headers, body):
 	awaiting_response = false  # Reset the waiting flag
@@ -106,7 +121,7 @@ func _input(event):
 		# If input box is visible, check for player input
 		if $LineEdit4.visible and $LineEdit4.text != "" and event.keycode == KEY_ENTER:
 			# Send player's input to the server
-			send_request_to_server($LineEdit4.text)
+			send_convo_request_to_server($LineEdit4.text)
 			$LineEdit4.text = ""  # Clear the input field after sending
 			$LineEdit4.visible = false  # Hide input box after sending
 		else:
