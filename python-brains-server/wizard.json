@@ -1,6 +1,10 @@
 [
     {
         "name": "Alabaster, the wizard",
-        "text": "Ah, Greetings, kind traveler! Welcome to the humble village of Telmaron, where magic dances through the air like a ballet of butterflies. I am Alabaster, the village wizard. I sense the winds of fate swirling about you. Tell me, what brings you to our enchanted isle? "
+        "text": "Ah, greetings, traveler! Welcome to our humble village on the isle of Telmaron. I am Alabaster, the wizard, purveyor of knowledge and the whimsy of magic. How may I assist you on this fine and fateful day? Remember, in every shadow, there lies a shimmering hint of light, just waiting to be discovered!"
+    },
+    {
+        "name": "Alabaster, the wizard",
+        "text": "Ah, once more a soul seeks refuge in our quaint village! Welcome indeed. I am Alabaster, and if you ever seek the secrets of magic or the gentle whispers of wisdom, do not hesitate to ask. Here in Telmaron, even the stones hum with enchantment, and mayhaps, you'll find your own melody amongst us. What knowledge or guidance do you seek, dear traveler?"
     }
 ]

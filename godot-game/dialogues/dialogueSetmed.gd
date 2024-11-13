@@ -26,6 +26,11 @@ func start():
 	$LineEdit.grab_focus()  # Give focus to the input box for typing
 	d_active = true
 	current_dialogue_id = 0  # Start with the first dialogue entry
+	 # Disable player movement
+	var player = get_parent().get_parent().get_node("Player")
+	player.set_can_move(false)
+
+	
 	next_script()
 	
 func next_script():
@@ -114,5 +119,7 @@ func _input(event):
 			next_script()
 	# End dialogue with the escape key
 	if d_active and event.is_action_pressed("ui_cancel"):
+		var player = get_parent().get_parent().get_node("Player")
+		player.set_can_move(true)
 		end_dialogue()
 	

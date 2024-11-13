@@ -1,6 +1,14 @@
 [
     {
         "name": "Evanora, the medicine woman",
-        "text": "Welcome to our lovely village on the island of Telmaron! I'm Evanora, the village medicine woman. If you're ever in need of some healing herbs or a bit of guidance, do not hesitate to visit. Our village might be small, but it's filled with warmth and wonder. May the winds guide you on your journey!"
+        "text": "Welcome, traveler, to the heart of warmth and healing! I'm Evanora, the village's medicine woman. Should you need mending, be it body or spirit, my door is always open. May your journey be as gentle as the whispering wind through the trees."
+    },
+    {
+        "name": "Evanora, the medicine woman",
+        "text": "Greetings, wanderer! You've found yourself in a place of peace and herbal wonders. I am Evanora, keeper of remedies and soothing words. If ever your soul seeks comfort or your wounds need tending, do not hesitate to visit me. May your path be lined with the gentle melodies of nature."
+    },
+    {
+        "name": "Evanora, the medicine woman",
+        "text": "Ah, a fresh face graces our fair village! Welcome, dear soul. I am Evanora, the weaver of herbal cures and bearer of tranquil thoughts. Should you require a remedy or a kind word, you'll always find them here. May your days be as bright and blooming as the wildflowers of Telmaron."
     }
 ]
