@@ -4,6 +4,7 @@ extends CanvasLayer
 
 var dialogue = []
 var current_dialogue_id = 0
+var consecutive_dialogues = 0
 var d_active = false
 var awaiting_response = false  # To track if we're waiting for a server response
 var http_request: HTTPRequest
@@ -27,7 +28,7 @@ func start():
 	d_active = true
 
 
-	current_dialogue_id = 0  # Start with the first dialogue entry
+	consecutive_dialogues = 0  # Start with the first dialogue entry
 	# Disable player movement
 
 	var player = get_parent().get_parent().get_node("Player")
@@ -39,7 +40,7 @@ func next_script():
 		return
 	
 	# Move to the next dialogue entry
-	if current_dialogue_id == 0:
+	if consecutive_dialogues == 0:
 		send_greeting_request_to_server()
 	else:
 		# Continue to the next dialogue line
@@ -107,6 +108,7 @@ func _http_request_completed(result, response_code, headers, body):
 			# Now that the response is ready, show the next dialogue
 			show_dialogue(current_dialogue_id)
 			current_dialogue_id += 1
+			consecutive_dialogues += 1
 		else:
 			print("Error parsing server response")
 	else:
