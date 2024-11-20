@@ -25,7 +25,7 @@ func start():
 	$LineEdit.visible = true  # Show the input box for the player
 	$LineEdit.grab_focus()  # Give focus to the input box for typing
 	d_active = true
-	current_dialogue_id = 0  # Start with the first dialogue entry
+	
 
 	var player = get_parent().get_parent().get_node("Player")
 	player.set_can_move(false)

@@ -1,10 +1,14 @@
 [
     {
         "name": "Haus, the blacksmith",
-        "text": "Great, another bright-eyed traveler. What do you need? I've got my hands full making sure this village doesn't fall apart, but I guess I can spare a moment. Need any armor repairs or perhaps a weapon upgrade? Just don\u2019t expect a discount for being new. "
+        "text": "Ah, another adventurer wanderin' into my shop. What do ya need, eh? Lookin' to get that rust bucket you call a sword fixed, or are you just here to bask in the glory of my fine craftsmanship? Don't have all day, so spit it out!"
     },
     {
         "name": "Haus, the blacksmith",
-        "text": "Didn't you just say that? Guess you've got a short memory or you're trying to pull a fast one on me. Anyway, I'm Haus, the blacksmith. If you've got gear needing some old-fashioned tough love\u2014or a bit of sarcasm to go with it\u2014I'm your guy. "
+        "text": "Listen here, hotshot. Sarah's just a little girl, and if you got any funny ideas, you'll be meetin' the business end of my hammer real quick. Now, how about we stick to talkin' about armor and weapons, eh?"
+    },
+    {
+        "name": "Haus, the blacksmith",
+        "text": "Back again, I see. What is it this time? Need some ironwork done or just here to test my patience? Give me somethin' to work with, will ya?"
     }
 ]
