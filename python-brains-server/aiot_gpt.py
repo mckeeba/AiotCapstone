@@ -29,6 +29,14 @@ class AiotGpt:
             api_key=openai.api_key,
         )
 
+        self.interact_counts = {
+            'wizard': 0,
+            'medicine woman': 0,
+            'blacksmith': 0,
+            'daughter': 0,
+            'goblin': 0
+        }
+
         self.file_paths = {
             'wizard': 'wizard.json',
             'medicine_woman': 'medicine_woman.json',
@@ -59,27 +67,27 @@ class AiotGpt:
 
         self.wizard_logs = base_context.copy() + [{
             "role": "system",
-            "content": 'You are a wizard in an RPG game. You will be interacting with players as you give them whimsical words of wisdom. Your name is Alabaster.'
+            "content": 'You are Alabaster, a wizard in an RPG game. You will be interacting with players as you give them whimsical words of wisdom. Your name is Alabaster.'
         }]
 
         self.medicine_woman_logs = base_context.copy() + [{
             "role": "system",
-            "content": 'You are a medicine woman in an RPG game. You take care of the village and tend to the wounds of your kin. You offer whimsical herbal remedies and encouraging words of wisdom.'
+            "content": 'You are Evanora, a medicine woman in an RPG game. You take care of the village and tend to the wounds of your kin. You offer whimsical herbal remedies and encouraging words of wisdom.'
         }]
 
         self.blacksmith_logs = base_context.copy() + [{
             "role": "system",
-            "content": 'You are a blacksmith in an RPG game. You are tough, determined, cranky, but have a sweet spot for your daughter (she is a child). You offer armor and weapon upgrades and sarcastic dialogue.'
+            "content": 'You are Haus, a blacksmith in an RPG game. You are tough, determined, cranky, but have a sweet spot for your daughter (she is a child). You offer armor and weapon upgrades and sarcastic dialogue.'
         }]
 
         self.daughter_logs = base_context.copy() + [{
             "role": "system",
-            "content": 'You are the young daughter of the blacksmith in an RPG game. You are innocent and sweet and love bugs and your toys. You love and admire your father, who is a blacksmith.'
+            "content": 'You are Sarah, the young daughter of the blacksmith in an RPG game. You are innocent and sweet and love bugs and your toys. You love and admire your father, who is a blacksmith.'
         }]
 
         self.goblin_logs = base_context.copy() + [{
             "role": "system",
-            "content": 'You are a goblin in an RPG game. You are dastardly and conniving as you are whimsical. You are always scheming to cause mischief over the people down the mountain.'
+            "content": 'You are Glork, a goblin in an RPG game. You are dastardly and conniving as you are whimsical. You are always scheming to cause mischief over the people down the mountain.'
         }]
 
     query = ''
@@ -136,10 +144,21 @@ class AiotGpt:
         else:
             raise ValueError(f"Invalid character: {character}. Expected one of: "
                              "'wizard', 'medicine woman', 'blacksmith', 'daughter', 'goblin'.")
-        chat_log.append({
-            "role": "system",
-            "content": "The player has arrived at your post."
-        })
+
+        print(self.interact_counts)
+        if self.interact_counts[character] == 0:
+            chat_log.append({
+                "role": "system",
+                "content": "A new stranger has arrived at your post."
+            })
+        else:
+            chat_log.append({
+                "role": "system",
+                "content": "The player has returned to your post."
+            })
+
+        self.interact_counts[character] += 1
+        print(self.interact_counts)
 
         query = ''
         while query != '_q':
