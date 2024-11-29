@@ -15,7 +15,7 @@ func _ready():
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)
 	$NinePatchRect.visible = false
-	$LineEdit.visible = false  # Hide input box until needed
+	$LineEdit.visible = false  
 	set_process_input(true)
 
 
@@ -35,7 +35,7 @@ func start():
 	
 func next_script():
 	if awaiting_response:
-		# If we're still waiting for the response, don't proceed to the next dialogue
+		# If still waiting response, don't proceed to the next dialogue
 		return
 	
 	# Move to the next dialogue entry
@@ -67,7 +67,7 @@ func send_convo_request_to_server(user_input: String):
 
 	awaiting_response = true  # Mark that we are waiting for a response
 
-	# Make an HTTP request to the server (non-blocking)
+	# Make an HTTP request to the server 
 	http_request.request(
 		api_url + 'npc_conversation',  # URL of the Flask server
 		["Content-Type: application/json"],  # Request headers
@@ -81,14 +81,14 @@ func send_greeting_request_to_server():
 	}
 	var json_string = JSON.stringify(json_data)
 
-	awaiting_response = true  # Mark that we are waiting for a response
+	awaiting_response = true  #  waiting for a response
 
-	# Make an HTTP request to the server (non-blocking)
+	# Make an HTTP request to the server 
 	http_request.request(
-		api_url + 'npc_greeting',  # URL of the Flask server
-		["Content-Type: application/json"],  # Request headers
-		HTTPClient.METHOD_POST,  # HTTP method
-		json_string  # Data to send in the body
+		api_url + 'npc_greeting',  
+		["Content-Type: application/json"],  
+		HTTPClient.METHOD_POST,
+		json_string  
 	)
 
 # Callback function for when the request is completed
@@ -106,7 +106,7 @@ func _http_request_completed(result, response_code, headers, body):
 			for npc in response_data.keys():
 				dialogue.append({"name": npc, "text": response_data[npc]})
 			
-			# Now that the response is ready, show the next dialogue
+			#response is ready, show the next dialogue
 			show_dialogue(current_dialogue_id)
 			current_dialogue_id += 1
 			consecutive_dialogues += 1

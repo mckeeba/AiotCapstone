@@ -1,14 +1,38 @@
 [
     {
         "name": "Evanora, the medicine woman",
-        "text": "Welcome, traveler, to the heart of warmth and healing! I'm Evanora, the village's medicine woman. Should you need mending, be it body or spirit, my door is always open. May your journey be as gentle as the whispering wind through the trees."
+        "text": "Ah, hello there, traveler! Come, come, sit by the fire. The road can be harsh, but Mother Nature provides many gifts to soothe the weary soul. Tell me, do you seek a remedy or perhaps some guidance on your journey? My herbs can ease many ailments, and my words, fashioned by wisdom and leaves, may guide you gently forward."
     },
     {
         "name": "Evanora, the medicine woman",
-        "text": "Greetings, wanderer! You've found yourself in a place of peace and herbal wonders. I am Evanora, keeper of remedies and soothing words. If ever your soul seeks comfort or your wounds need tending, do not hesitate to visit me. May your path be lined with the gentle melodies of nature."
+        "text": "Well, that's the spirit! Enthusiasm is a wonderful companion on any journey. What ails you today, if anything? Or are you simply in search of some herbal concoctions to carry you onward? Let me know, and I'll craft something just as vibrant as your energy!"
     },
     {
         "name": "Evanora, the medicine woman",
-        "text": "Ah, a fresh face graces our fair village! Welcome, dear soul. I am Evanora, the weaver of herbal cures and bearer of tranquil thoughts. Should you require a remedy or a kind word, you'll always find them here. May your days be as bright and blooming as the wildflowers of Telmaron."
+        "text": "Welcome, traveler! Come, rest a while. The world outside can be harsh, but within these walls, there is comfort and care. Are you in need of a healing touch or perhaps some herbal remedies to lighten your journey? I have an assortment of concoctions crafted for the spirit and the body alike. Please, share your needs, and I'll do my best to aid you."
+    },
+    {
+        "name": "Evanora, the medicine woman",
+        "text": "Hello there! It's a pleasure to have you here. How can I assist you today? Perhaps you need a remedy or some advice for your journey? Whatever it may be, I'm here to help you with a blend of nature's finest and a sprinkle of wisdom."
+    },
+    {
+        "name": "Evanora, the medicine woman",
+        "text": "Oh dear, it seems something is amiss! What troubles you, traveler? Let me know so I can assist you better. Sometimes, a soothing tea or a moment of calm can help clear away the clouds of frustration."
+    },
+    {
+        "name": "Evanora, the medicine woman",
+        "text": "I sense some frustration there, dear traveler. The world can indeed be a challenging place. If there's anything I can do to ease your burden or help in any way, please let me know. My herbs have ways of bringing calm and clarity, if that's what you seek."
+    },
+    {
+        "name": "Evanora, the medicine woman",
+        "text": "Very well, Haus is a steadfast soul and an excellent blacksmith. His craftsmanship is renowned here in the village. May your visit be fruitful! If ever you find yourself in need of some herbal remedies, do not hesitate to return. Farewell for now, traveler!"
+    },
+    {
+        "name": "Evanora, the medicine woman",
+        "text": "Greetings once more! What brings you back to my humble abode? Is there something you seek, or perhaps you have a new ailment you'd like me to take a look at? I'm here to help in whatever way I can."
+    },
+    {
+        "name": "Evanora, the medicine woman",
+        "text": "Welcome back, traveler! I'm glad to see you again. How can I assist you today? Whether it's a brew for the mind or balm for the body, I have just the concoction for you. Let me know what you need!"
     }
 ]
