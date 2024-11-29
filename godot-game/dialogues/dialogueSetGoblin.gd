@@ -15,7 +15,7 @@ func _ready():
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)
 	$NinePatchRect4.visible = false
-	$LineEdit4.visible = false  # Hide input box until needed
+	$LineEdit4.visible = false  
 	set_process_input(true)
 
 
@@ -27,16 +27,15 @@ func start():
 	$LineEdit4.grab_focus()  # Give focus to the input box for typing
 	d_active = true
 	consecutive_dialogues = 0  # Start with the first dialogue entry
-
-	# Disable player movement
-
+	
 	var player = get_parent().get_parent().get_node("Player")
 	player.set_can_move(false)
+
 	next_script()
 	
 func next_script():
 	if awaiting_response:
-		# If we're still waiting for the response, don't proceed to the next dialogue
+		# If still waiting response, don't proceed to the next dialogue
 		return
 	
 	# Move to the next dialogue entry
@@ -55,7 +54,7 @@ func next_script():
 
 func show_dialogue(index: int):
 	if index < dialogue.size():
-		$NinePatchRect4/Name4.text = 'Glork'
+		$NinePatchRect4/Name4.text = "Glork"
 		$NinePatchRect4/Chat4.text = dialogue[index]['text']
 
 # Function to send HTTP request to the server
@@ -68,7 +67,7 @@ func send_convo_request_to_server(user_input: String):
 
 	awaiting_response = true  # Mark that we are waiting for a response
 
-	# Make an HTTP request to the server (non-blocking)
+	# Make an HTTP request to the server 
 	http_request.request(
 		api_url + 'npc_conversation',  # URL of the Flask server
 		["Content-Type: application/json"],  # Request headers
@@ -82,15 +81,16 @@ func send_greeting_request_to_server():
 	}
 	var json_string = JSON.stringify(json_data)
 
-	awaiting_response = true  # Mark that we are waiting for a response
+	awaiting_response = true  #  waiting for a response
 
-	# Make an HTTP request to the server (non-blocking)
+	# Make an HTTP request to the server 
 	http_request.request(
-		api_url + 'npc_greeting',  # URL of the Flask server
-		["Content-Type: application/json"],  # Request headers
-		HTTPClient.METHOD_POST,  # HTTP method
-		json_string  # Data to send in the body
+		api_url + 'npc_greeting',  
+		["Content-Type: application/json"],  
+		HTTPClient.METHOD_POST,
+		json_string  
 	)
+
 # Callback function for when the request is completed
 func _http_request_completed(result, response_code, headers, body):
 	awaiting_response = false  # Reset the waiting flag
@@ -106,7 +106,7 @@ func _http_request_completed(result, response_code, headers, body):
 			for npc in response_data.keys():
 				dialogue.append({"name": npc, "text": response_data[npc]})
 			
-			# Now that the response is ready, show the next dialogue
+			#response is ready, show the next dialogue
 			show_dialogue(current_dialogue_id)
 			current_dialogue_id += 1
 			consecutive_dialogues += 1
@@ -117,8 +117,8 @@ func _http_request_completed(result, response_code, headers, body):
 
 # Function to end the dialogue session
 func end_dialogue():
-	$NinePatchRect4.visible = false
-	$LineEdit4.visible = false
+	$NinePatchRect4.visible = false  # Hide the UI
+	$LineEdit4.visible = false  # Hide the input box
 	d_active = false
 	print("Dialogue finished")
 
@@ -134,9 +134,9 @@ func _input(event):
 		else:
 			# Proceed to the next dialogue if no input is expected
 			next_script()
+	# End dialogue with the escape key
 	if d_active and event.is_action_pressed("ui_cancel"):
 		var player = get_parent().get_parent().get_node("Player")
 		player.set_can_move(true)
 		end_dialogue()
-
-			
+	

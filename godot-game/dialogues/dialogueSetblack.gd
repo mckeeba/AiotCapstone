@@ -15,32 +15,32 @@ func _ready():
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)
 	$NinePatchRect2.visible = false
-	$LineEdit2.visible = false  # Hide input box until needed
+	$LineEdit2.visible = false  
 	set_process_input(true)
 
 
 func start():
 	if d_active:
-		return  
+		return  # Prevent starting dialogue again if already active
 	$NinePatchRect2.visible = true
-	$LineEdit2.visible = true 
-	$LineEdit2.grab_focus() 
+	$LineEdit2.visible = true  # Show the input box for the player
+	$LineEdit2.grab_focus()  # Give focus to the input box for typing
 	d_active = true
-
-
 	consecutive_dialogues = 0  # Start with the first dialogue entry
-	# Disable player movement
-
+	
 	var player = get_parent().get_parent().get_node("Player")
 	player.set_can_move(false)
+
 	next_script()
 	
 func next_script():
 	if awaiting_response:
+		# If still waiting response, don't proceed to the next dialogue
 		return
 	
 	# Move to the next dialogue entry
 	if consecutive_dialogues == 0:
+		# On the first interaction, trigger the HTTP request to the server
 		send_greeting_request_to_server()
 	else:
 		# Continue to the next dialogue line
@@ -48,12 +48,13 @@ func next_script():
 			show_dialogue(current_dialogue_id)
 			current_dialogue_id += 1
 		else:
+			# Allow the player to respond by typing into the input box
 			$LineEdit2.visible = true
 			$LineEdit2.grab_focus()
 
 func show_dialogue(index: int):
 	if index < dialogue.size():
-		$NinePatchRect2/Name2.text = 'Haus'
+		$NinePatchRect2/Name2.text = "Haus"
 		$NinePatchRect2/Chat2.text = dialogue[index]['text']
 
 # Function to send HTTP request to the server
@@ -66,7 +67,7 @@ func send_convo_request_to_server(user_input: String):
 
 	awaiting_response = true  # Mark that we are waiting for a response
 
-	# Make an HTTP request to the server (non-blocking)
+	# Make an HTTP request to the server 
 	http_request.request(
 		api_url + 'npc_conversation',  # URL of the Flask server
 		["Content-Type: application/json"],  # Request headers
@@ -80,13 +81,13 @@ func send_greeting_request_to_server():
 	}
 	var json_string = JSON.stringify(json_data)
 
-	awaiting_response = true  # Mark that we are waiting for a response
+	awaiting_response = true  #  waiting for a response
 
-	# Make an HTTP request to the server (non-blocking)
+	# Make an HTTP request to the server 
 	http_request.request(
-		api_url + 'npc_greeting',  # URL of the Flask server
-		["Content-Type: application/json"],  # Request headers
-		HTTPClient.METHOD_POST, 
+		api_url + 'npc_greeting',  
+		["Content-Type: application/json"],  
+		HTTPClient.METHOD_POST,
 		json_string  
 	)
 
@@ -105,7 +106,7 @@ func _http_request_completed(result, response_code, headers, body):
 			for npc in response_data.keys():
 				dialogue.append({"name": npc, "text": response_data[npc]})
 			
-			# Now that the response is ready, show the next dialogue
+			#response is ready, show the next dialogue
 			show_dialogue(current_dialogue_id)
 			current_dialogue_id += 1
 			consecutive_dialogues += 1
@@ -133,8 +134,9 @@ func _input(event):
 		else:
 			# Proceed to the next dialogue if no input is expected
 			next_script()
-			# End dialogue with the escape key
+	# End dialogue with the escape key
 	if d_active and event.is_action_pressed("ui_cancel"):
 		var player = get_parent().get_parent().get_node("Player")
 		player.set_can_move(true)
 		end_dialogue()
+	
