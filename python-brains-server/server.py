@@ -8,7 +8,6 @@ aiot_gpt = AiotGpt()
 @app.route('/npc_conversation', methods=['POST'])
 def npc_conversation():
     data = request.json
-
     npc_name = data.get('npc_name')
     user_input = data.get('user_input')
     response = aiot_gpt.run_character_api(npc_name, user_input)
@@ -23,7 +22,6 @@ def npc_greeting():
     response = aiot_gpt.run_character_greeting(npc_name)
     return jsonify({npc_name: response})
 
-# Run the Flask app on port 4200
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=4200)
     print(app.json)

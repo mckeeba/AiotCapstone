@@ -17,15 +17,15 @@ if __name__ == "__main__":
         print("Goblin: [g]")
         choice = input("You: ")
         if choice == 'w':
-            AIOT.run_character('wizard')
+            AIOT.run_character_greeting('wizard')
         elif choice == 'm':
-            AIOT.run_character('medicine woman')
+            AIOT.run_character_greeting('medicine woman')
         elif choice == 'b':
-            AIOT.run_character('blacksmith')
+            AIOT.run_character_greeting('blacksmith')
         elif choice == 'bd':
-            AIOT.run_character('daughter')
+            (AIOT.run_character_greeting('daughter'))
         elif choice == 'g':
-            AIOT.run_character('goblin')
+            AIOT.run_character_greeting('goblin')
         elif choice == 'quit':
             break
         else:
