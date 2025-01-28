@@ -3,3 +3,5 @@
 /android/
 .DS_Store
 __pycache__
+python-brains-server/*.json
+python-brains-server/*.env
