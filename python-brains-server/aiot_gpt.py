@@ -1,11 +1,12 @@
-import subprocess
-import boto3
-from botocore.exceptions import ClientError
 import openai
 import json
-from dotenv import load_dotenv
 import os
+import requests
 
+AWS_SERVER_URL = "http://3.138.61.46:5000/get_api_key"
+AUTH_TOKEN = "adventureisoutthere"
+headers = {"Authorization": AUTH_TOKEN}
+response = requests.get(AWS_SERVER_URL, headers=headers)
 
 class AiotGpt:
     def __init__(self):
@@ -79,8 +80,11 @@ class AiotGpt:
     query = ''
 
     def get_key(self):
-        load_dotenv()  # Load .env file
-        openai.api_key = os.getenv("CHATGPT_API_KEY")
+        if response.status_code == 200:
+            openai.api_key = response.json().get("api_key")
+            print("Retrieved API Key:", openai.api_key)
+        else:
+            print("Failed to retrieve API key:", response.json())
 
     def reset_json_files(self):
         """Reset all character JSON files by overwriting them with empty data."""
