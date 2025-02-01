@@ -1,16 +1,18 @@
 import openai
 import json
-import os
-import requests
+import user_auth
 
-AWS_SERVER_URL = "http://3.138.61.46:5000/get_api_key"
-AUTH_TOKEN = "adventureisoutthere"
-headers = {"Authorization": AUTH_TOKEN}
-response = requests.get(AWS_SERVER_URL, headers=headers)
+SECRET = "python-brains-server/aiot_gpt/chat_gpt-api-key"
+USER_POOL_ID = "us-east-1_YREP5IfxE"
+CLIENT_ID = "69f24j17t7k18eoji251dauinu"
+IDENTITY_POOL_ID = "us-east-1:5b8f1a30-c810-4665-849a-bc7845e090f8"
+REGION = "us-east-1"
 
 class AiotGpt:
     def __init__(self):
-        self.get_key()
+        if not openai.api_key:
+            self.get_key()
+
         # Initialize the OpenAI client
         self.client = openai.OpenAI(
             api_key=openai.api_key,
@@ -80,11 +82,26 @@ class AiotGpt:
     query = ''
 
     def get_key(self):
-        if response.status_code == 200:
-            openai.api_key = response.json().get("api_key")
-            print("Retrieved API Key:", openai.api_key)
+        id_token = self.authenticate_user()
+        if id_token:
+            aws_credentials = user_auth.get_aws_credentials(id_token)
+            if aws_credentials:
+                secret = user_auth.retrieve_secret(aws_credentials, SECRET)
+                secret_dict = json.loads(secret)
+                openai.api_key = secret_dict['AIOT_GPT']
+        return 0
+
+    def authenticate_user(self):
+        id_token = False
+        choice = input("Login or Register?(L/R):")
+        if choice == "R":
+            user_auth.register_user()
+        elif choice == "L":
+            id_token = user_auth.authenticate_user()
         else:
-            print("Failed to retrieve API key:", response.json())
+            print("Invalid input!")
+            pass
+        return id_token
 
     def reset_json_files(self):
         """Reset all character JSON files by overwriting them with empty data."""
