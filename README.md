@@ -25,29 +25,76 @@ Feel free to explore the NPCs' unique perspectives, personalities, and interacti
 
 ## How to Run the Game
 
-### Prerequisites
-- A valid OpenAI API key (to enable ChatGPT-powered NPCs).
-- Godot Game Engine installed (free download: [https://godotengine.org/](https://godotengine.org/)).
+## Prerequisites
+Before setting up the game, ensure you have the following installed on your system:
 
-### Setup Steps
-1. **Set Up the Python Server**:
-   - Navigate to the directory:  
-     `/<your download location>/AiotCapstone/python-brains-server/`
-   - Create a file named `.env` in this directory.
-   - Inside `.env`, add your OpenAI API key in the following format:  
+- **Python** (latest version recommended)
+- **Godot Game Engine** (free download: [https://godotengine.org/](https://godotengine.org/))
+
+## Setup Steps
+
+### 1. Install Python
+Ensure Python is installed on your system. If not, follow these steps:
+
+- **Windows:**
+  1. Download Python from [https://www.python.org/downloads/](https://www.python.org/downloads/).
+  2. Run the installer and **check** the option to **"Add Python to PATH"** before installing.
+  3. Open a terminal (Command Prompt or PowerShell) and verify installation by running:
+     ```sh
+     python --version
      ```
-     CHATGPT_API_KEY=<your_openai_api_key>
+  
+- **Mac/Linux:**
+  1. Open a terminal and check if Python is installed:
+     ```sh
+     python3 --version
      ```
+  2. If not installed, download it from [https://www.python.org/downloads/](https://www.python.org/downloads/) or install via:
+     - **Mac:**  
+       ```sh
+       brew install python
+       ```
+     - **Linux:**  
+       ```sh
+       sudo apt install python3
+       ```
 
-2. **Download and Set Up Godot**:
-   - Download and install Godot from [https://godotengine.org/](https://godotengine.org/).
-   - Open Godot and select **'Import'**.
-   - Navigate to the directory:  
-     `/<your download location>/AiotCapstone/godot-game/`.
-   - Select the project file labeled `AIOT` and click **'Open'**.
+### 2. Download and Set Up Godot
+1. Download and install Godot from [https://godotengine.org/](https://godotengine.org/).
+2. Open **Godot** and click **"Import"**.
+3. Navigate to the project directory:
+   ```sh
+   /<your download location>/AiotCapstone/godot-game/
 
-3. **Run the Game**:
-   - In Godot, click on the `AIOT` project and select **'Run'** to start the game.
+## 3. Running the Game
+
+### 1. Start the Flask Server
+The Flask server powers the AI-driven NPCs. You need to start it before launching the game.
+
+- **Using the Command Line:**
+  1. Open a terminal and navigate to the root directory of `AiotCapstone`.
+  2. Run the appropriate command for your operating system:
+     - **Windows:**
+       ```sh
+       python python-brains-server/server.py
+       ```
+     - **Mac/Linux:**
+       ```sh
+       python python-brains-server/server.py
+       ```
+
+- **Using an IDE (e.g., VS Code, PyCharm):**
+  1. Open `server.py` from the `python-brains-server` directory.
+  2. Click **Run** or use the IDE’s built-in terminal to execute:
+     ```sh
+     python server.py
+     ```
+  The command terminal will then take you through a few steps you will follow to log in and register.
+
+### 2. Launch the Game in Godot
+1. Open **Godot**.
+2. Select the `AIOT` project.
+3. Click **Run** to start the game.
 
 ---
 

@@ -95,11 +95,12 @@ class AiotGpt:
         id_token = False
         choice = input("Login or Register?(L/R):")
         if choice == "R":
-            user_auth.register_user()
+            id_token = user_auth.register_user()
         elif choice == "L":
             id_token = user_auth.authenticate_user()
         else:
-            print("Invalid input!")
+            print("Invalid input")
+            self.authenticate_user()
             pass
         return id_token
 
