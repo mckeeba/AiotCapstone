@@ -58,8 +58,14 @@ Ensure Python is installed on your system. If not, follow these steps:
        ```sh
        sudo apt install python3
        ```
+       
+### 2. Install requirements.txt
+In your terminal, at the root directory of the project, run the following command:
+```sh
+pip install -r requirements.txt
+```
 
-### 2. Download and Set Up Godot
+### 3. Download and Set Up Godot
 1. Download and install Godot from [https://godotengine.org/](https://godotengine.org/).
 2. Open **Godot** and click **"Import"**.
 3. Navigate to the project directory:
