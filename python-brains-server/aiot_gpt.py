@@ -1,10 +1,18 @@
-import subprocess
 import openai
 import json
+import user_auth
+
+SECRET = "python-brains-server/aiot_gpt/chat_gpt-api-key"
+USER_POOL_ID = "us-east-1_YREP5IfxE"
+CLIENT_ID = "69f24j17t7k18eoji251dauinu"
+IDENTITY_POOL_ID = "us-east-1:5b8f1a30-c810-4665-849a-bc7845e090f8"
+REGION = "us-east-1"
 
 class AiotGpt:
     def __init__(self):
-        self.settup_ssh()
+        if not openai.api_key:
+            self.get_key()
+
         # Initialize the OpenAI client
         self.client = openai.OpenAI(
             api_key=openai.api_key,
@@ -73,26 +81,28 @@ class AiotGpt:
 
     query = ''
 
-    def settup_ssh(self):
-        subprocess.run(["ssh-agent", "-s"], check=True, text=True, capture_output=True)
-        subprocess.run(["ssh-add", "../key.txt"], check=True)
-        remote_user = "taylorme5"
-        remote_host = "tst1000.cs.appstate.edu"
-        remote_key_path = "~/open_api_key.txt"
-        try:
-            result = subprocess.run(
-                ["ssh", f"{remote_user}@{remote_host}", f"cat {remote_key_path}"],
-                capture_output=True,
-                text=True,
-                check=True,
-            )
-            # Retrieve and store the API key
-            openai.api_key = result.stdout.strip()
-            print("API key retrieved successfully.")
+    def get_key(self):
+        id_token = self.authenticate_user()
+        if id_token:
+            aws_credentials = user_auth.get_aws_credentials(id_token)
+            if aws_credentials:
+                secret = user_auth.retrieve_secret(aws_credentials, SECRET)
+                secret_dict = json.loads(secret)
+                openai.api_key = secret_dict['AIOT_GPT']
+        return 0
 
-        except subprocess.CalledProcessError as e:
-            print("Error retrieving API key:", e.stderr)
-            openai.api_key = None
+    def authenticate_user(self):
+        id_token = False
+        choice = input("Login or Register?(L/R):")
+        if choice == "R":
+            id_token = user_auth.register_user()
+        elif choice == "L":
+            id_token = user_auth.authenticate_user()
+        else:
+            print("Invalid input")
+            self.authenticate_user()
+            pass
+        return id_token
 
     def reset_json_files(self):
         """Reset all character JSON files by overwriting them with empty data."""

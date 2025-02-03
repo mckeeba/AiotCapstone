@@ -1,3 +1,4 @@
+
 from flask import Flask, request, jsonify
 from aiot_gpt import AiotGpt
 
@@ -23,5 +24,5 @@ def npc_greeting():
     return jsonify({npc_name: response})
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=4200)
+    app.run(debug=True, host='0.0.0.0', port=4200, use_reloader=False)
     print(app.json)
