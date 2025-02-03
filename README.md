@@ -71,6 +71,7 @@ pip install -r requirements.txt
 3. Navigate to the project directory:
    ```sh
    /<your download location>/AiotCapstone/godot-game/
+4. Here, select **project.godot**
 
 ## 3. Running the Game
 
